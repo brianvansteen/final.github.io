@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Ottawa LEGO Enthusiasts</title>
+    <meta http-equiv="refresh" content="600">
+    <meta charset="utf-8">
+    <meta name="author" content="Brian Van Steen">
+    <meta name="keywords" content="lego, star wars, club, cuisine">
+    <meta name="description" content="Main landing page for LEGO Star Wars Enthusiasts">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+    </script>
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+
+</head>
+
+<body>
+
+    <!-- Main background title at top of all pages-->
+
+    <header>
+        <img src="img/main/logo.png" alt="LEGO Star Wars club logo" id="mainLogo">
+    </header>
+
+    <br>
+
+    <!-- Full web site navigation -->
+
+    <div class="navGrid">
+        <div>
+            <a href="index.html">Home</a>
+        </div>
+        <div>
+            <a href="mocs.html">MOCs</a>
+        </div>
+        <div>
+            <a href="reviews.html">Reviews</a>
+        </div>
+        <div>
+            <a href="services.html">Services</a>
+        </div>
+        <div><a href="mocs.html#featured">Featured!</a>
+        </div>
+    </div>
+
+    <br>
+
+    <h1 class="galleryH1">LEGO Star Wars Club Events</h1>
+
+    <br>
+
+    <img src="img/events/welcome.jpg" alt="LEGO Star Wars events and activities" class="eventsResponsive">
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img id="image1" class="thumbnail" src="img/events/lineup.jpg" alt="Attend Star Wars events" />
+            </div>
+            <div class="col-md-2">
+                <img id="image2" class="thumbnail" src="img/events/build.jpg" alt="LEGO Star Wars build events" />
+            </div>
+            <div class="col-md-2">
+                <img id="image3" class="thumbnail" src="img/events/collectables.jpg" alt="Star Wars collectables events" />
+            </div>
+            <div class="col-md-2">
+                <img id="image4" class="thumbnail" src="img/events/costume.jpg" alt="Star Wars cosplay events" />
+            </div>
+            <div class="col-md-2">
+                <img id="image5" class="thumbnail" src="img/events/figures.jpg" alt="LEGO Star Wars minifigure events" />
+            </div>
+            <div class="col-md-2">
+                <img id="image6" class="thumbnail" src="img/events/other.jpg" alt="LEGO Star Wars minifigure events" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <button id="backward">&lt;</button>
+            </div>
+            <div class="col-md-10">
+                <img id="bigImage" class="large-img" src="img/events/lineup.jpg" alt="Attend Star Wars events" />
+            </div>
+            <div class="col-md-1">
+                <button id="forward">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // start of the gallery images
+        var paused = false;
+        $(".thumbnail").click(function() {
+            $("#bigImage").attr('src',
+                $(this).attr('src'));
+        });
+
+        var counter = 1;
+        // click on small image to load to large viewer
+        $("#image" + counter).click();
+
+        // click on the backwards icon to select the previous image
+        $("#backward").click(function() {
+            counter -= 1; // decrement the counter by one
+            if (counter < 1) {
+                counter = 6; // if counter at 0, loop to image 6 / last time
+            }
+            $("#image" + counter).click();
+        });
+
+        // click on the forwards icon to select the next image
+        $("#forward").click(function() {
+            counter += 1; // increment the counter by one
+            if (counter > 6) {
+                counter = 1; // if counter greater than 6, loop to image 1 / first time
+            }
+            $("#image" + counter).click();
+        });
+
+        // pause the gallary images display when clicking on image in large viewer
+        $("#bigImage").click(function() {
+            paused = !paused;
+        });
+
+        // set time interval between displaying the large images
+        setInterval(function() {
+            if (!paused) { // if gallary of images is not paused
+                $("#forward").click();
+            };
+        }, 2000);
+    </script>
+
+
+</body>
+
+</html>
