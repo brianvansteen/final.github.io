@@ -15,6 +15,7 @@
 	8. Page 5: Services
 	9. Footer for all pages
     10. Other responsive features
+    11. Report page
 
 ------------------------------------------------------------------------------------- */
 
@@ -42,8 +43,9 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 
-/* Text Sizing ---------------------------------------------------------------------- */
+/* Text sizing options -------------------------------------------------------------- */
 
 .textSizing {
     text-align: center;
@@ -73,7 +75,7 @@
 }
 
 
-/* 2. Header All Pages -------------------------------------------------------------- */
+/* 2. Header logo for all pages ----------------------------------------------------- */
 
 header {
     background-color: #15f2fd;
@@ -88,22 +90,22 @@ header>#mainLogo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
-    max-width: 140%;
-    max-height: 140%;
+    width: 80%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .imageResponsive {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
-    max-width: 100%;
-    max-height: 100%;
+    width: 40%;
+    max-width: 40%;
+    max-height: 40%;
 }
 
 
-/* 3. Navigation All Pages ---------------------------------------------------------- */
+/* 3. Navigation to all five pages -------------------------------------------------- */
 
 .navGrid {
     display: grid;
@@ -152,31 +154,91 @@ header>#mainLogo {
 }
 
 .introductionMain {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.introductionMain>h1 {
     font-family: 'distantgalaxy', sans-serif;
     text-align: center;
-    font-size: calc(8px + 1.4vw);
+    overflow: hidden;
+    font-size: calc(8px + 1.8vw);
     color: #2E67F8;
     background-color: #2E67F833;
     border-radius: 10px;
     padding: 10px;
-    border: 3px solid #2E67F8;
+    border: 5px solid #2E67F8;
+}
+
+.typewriter {
+    display: inline-block;
+    text-align: center;
+}
+
+.typewriter-text {
+    font-family: 'distantgalaxy', monospace;
+    display: inline-block;
+    color: #2E67F8;
+    overflow: hidden;
+    letter-spacing: 5px;
+    animation: typing 8s steps(38, end);
+    /*, blink .75s step-end infinite; */
+    white-space: nowrap;
+    font-size: calc(8px + 1.4vw);
+    font-weight: 700;
+    /* box-sizing: border-box; */
+}
+
+@keyframes typing {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+/* @keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange
+    }
+} */
+
+.mainPageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 25rem));
+    padding: 10px;
+    border: 5px solid #2E67F8;
+    border-radius: 2px;
 }
 
 .introductionSecondary {
-    display: grid;
-    grid-template-columns: auto auto;
     font-family: 'Roboto', sans-serif;
     font-size: calc(8px + 1.2vw);
-    color: #2a504b;
-    padding: 5px;
-    border-radius: 5px;
+    color: #2E67F8;
+    grid-gap: 1rem;
 }
 
-.featuredAttraction {
+.featuredMOC {
     font-family: 'Righteous', cursive;
     text-align: center;
-    font-size: calc(10px + 4vw);
-    color: #2a504b;
+    font-size: calc(10px + 2vw);
+    color: #2E67F8;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.featuredMOCLink {
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: calc(8px + 1vw);
+    color: #2E67F8;
     text-decoration: none;
 }
 
@@ -338,890 +400,6 @@ main.gallery {
 }
 
 
-/* ------------------------------------------------------------------------------------- */
-
-
-/* 6. Page 3 Plan Your Visit by Juan J Dominguez*/
-
-
-/* Begining of style */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/*
-* {
-    box-sizing: border-box;
-}
-*/
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* background style for all sections */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.tickets,
-.reservation,
-.map,
-.transportation,
-.todayContainer {
-    background-color: rgb(255, 255, 255);
-    padding: 0%;
-    border-left: 1.0vw solid #2196F3;
-    border-right: 1.0vw solid #2196F3;
-    border-top: 1.0vw solid #2196F3;
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-.services {
-    background-color: rgb(97, 173, 152, 0.6);
-    padding: 0%;
-    border-left: 19px solid #2196F3;
-    border-right: 19px solid #2196F3;
-    border-top: 19px solid #2196F3;
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-.tickets {
-    padding-top: 18vw;
-}
-
-.ticketsType {
-    background-color: rgb(255, 255, 255);
-    background-color: rgba(97, 173, 152, 0.6);
-    padding-bottom: 4%;
-    padding-left: 2%;
-    padding-right: 2%;
-    border-top: 1.0vw solid #2196F3;
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* font style for all sections excluding title and subtitle */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.grlFamily {
-    font-family: 'Roboto', sans-serif;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* font style for title and subtitle  */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.ttleFamily {
-    font-family: "Chewy", cursive;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* font size all title  */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-h1.ticketsTitle,
-h1.servicesTitle {
-    font-size: 4vw;
-    clear: both;
-    font-weight: bold;
-    color: rgba(19, 54, 108);
-    text-align: center;
-}
-
-
-/*------------------------------------------------------------------------------------- */
-
-
-/* font size and others all sub-title */
-
-
-/*------------------------------------------------------------------------------------- */
-
-h3.servicesHealthTitle,
-h3.servicesDisabilitiesTitle,
-h3.servicesOtherTitle {
-    font-size: 3vw;
-    background-color: rgba(42, 80, 75, 0.6);
-    border-radius: 5px;
-    padding: 25px;
-    color: rgba(19, 54, 108);
-    text-align: center;
-    margin-top: 0px;
-}
-
-h2.todayAtYokoso {
-    font-size: 3vw;
-    /* clear: both; */
-    font-weight: bold;
-    color: rgba(19, 54, 108);
-    /* text-align: center; */
-}
-
-p.todayAtYokoso {
-    font-size: 1.6vw;
-    /* clear: both; */
-    font-weight: bold;
-    color: rgba(19, 54, 108);
-    /* text-align: center; */
-}
-
-ul.todayAtYokoso {
-    font-size: 1vw;
-    /* clear: both; */
-    font-weight: bold;
-    color: rgba(19, 54, 108);
-    /* text-align: center; */
-}
-
-h2.rsv,
-h2.transportationDetail,
-h2.mapTitle {
-    font-size: 3vw;
-    clear: both;
-    font-weight: bold;
-    color: rgba(19, 54, 108);
-    text-align: center;
-    background-color: rgba(42, 80, 75, 0.6);
-    border-radius: 5px;
-    padding: 25px;
-    margin-top: 0px;
-}
-
-.ticketsType h2 {
-    font-size: 2vw;
-    font-weight: bold;
-    color: #13366c;
-    text-align: center;
-    background-color: rgba(42, 80, 75, 0.6);
-    padding: 20px;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* font size all content */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-p.asLowAs {
-    font-size: 1.3vw;
-    color: rgb(7, 119, 22);
-    font-weight: bold;
-}
-
-.features {
-    font-size: 1.4vw;
-}
-
-.tktQty,
-.tkt,
-.ticketsFeatures {
-    font-size: 1.2vw;
-    font-weight: bold;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* font(other than family) for main section and subsection headings  */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-p.text {
-    font-size: 1.4vw;
-    font-weight: normal;
-    color: black;
-    text-align: left;
-    line-height: 2;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* top sections today and contacts layout*/
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* the following animation demonstrates the use of position and z-index
-also,  .tickets is padded above  */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-div.bckgrnd {
-    position: absolute;
-    z-index: 1;
-    transform-origin: 50% 50%;
-    width: 15vw;
-    height: 20vw;
-    border-radius: 50vw;
-    background-color: rgba(97, 173, 152, 0.6);
-    left: 40.2vw;
-    animation: bounce 10s infinite linear alternate;
-}
-
-div.topContainer {
-    border-right: 1.0vw solid #2196F3;
-    border-left: 1.0vw solid #2196F3;
-}
-
-div.col {
-    float: left;
-    width: 41%;
-    padding: 15px;
-}
-
-.topContainer::after {
-    content: "";
-    display: table;
-}
-
-img.topImg {
-    position: absolute;
-    z-index: 2;
-    transform-origin: 0% 0%;
-    width: 12vw;
-    height: 20vw;
-    border-radius: 50px;
-    left: 41.2vw;
-    /* ------------------------------------------------------------------------------------- */
-    /*comment the following instruction to stop image swing*/
-    animation: swing 4s infinite linear alternate;
-    /* ------------------------------------------------------------------------------------- */
-}
-
-@keyframes swing {
-    from {
-        transform: rotate(-1deg);
-    }
-    to {
-        transform: rotate(1deg);
-    }
-}
-
-@keyframes bounce {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(720deg);
-    }
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* first aside for reservations <detail> */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-aside #reservationsProtocol,
-summary.rsvProtocol {
-    text-align: center;
-    font-size: 2vw;
-}
-
-@keyframes label {
-    from {
-        color: rgba(19, 54, 108);
-    }
-    to {
-        color: rgba(19, 54, 108);
-        font-weight: bold;
-    }
-}
-
-.call {
-    animation: label 2.0s alternate infinite;
-}
-
-summary.rsvProtocol {
-    text-align: center;
-    font-size: 1.8vw;
-    font-style: italic;
-    padding: 4px;
-    width: max-content;
-    background-color: rgba(97, 173, 152, 0.0);
-    border: none;
-    cursor: pointer;
-    display: block;
-    margin: auto;
-    cursor: pointer;
-    animation: label 1.0s alternate infinite
-}
-
-table.instrTable {
-    font-size: 1vw;
-    border: none;
-    background-color: rgba(97, 173, 152, 0.6);
-    margin-left: 440px;
-    text-align: left;
-}
-
-summary.rsvProtocol:hover {
-    background-color: #ccc;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* tickets section layout */
-
-
-/*------------------------------------------------------------------------------------- */
-
-.ticketsAll {
-    display: flex;
-    flex-flow: wrap;
-    background-color: #eaf1f8;
-    text-align: left;
-}
-
-.ticketsType {
-    flex: 25%;
-}
-
-.tktImg {
-    width: 70%;
-    height: auto;
-    margin-left: 2.0vw;
-}
-
-.ticketsFeatures {
-    margin-left: 1.0vw;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* buy now buttons layout */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.buyNow,
-.buyNow2,
-.buyNow3,
-.buyNow4 {
-    display: block;
-    background: #13366c;
-    color: #f8e803;
-    font-weight: bold;
-    font-size: 1.5vw;
-    text-decoration: none;
-    box-shadow: .2vw .2vw rgb(141, 139, 139);
-    text-align: center;
-    width: 18vw;
-    height: 2.4vw;
-    margin: auto;
-    border-radius: 5.0vw;
-    cursor: pointer;
-    padding-top: .3vw;
-    padding-bottom: .4vw;
-}
-
-.butHover:hover {
-    background: #f8e803;
-    color: #13366c;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* ticket price, qty layout */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.tktQty {
-    /*container div, cell div follows*/
-    display: table;
-    width: fit-content;
-    table-layout: fixed;
-    border-spacing: 10px;
-    margin-left: 30px;
-}
-
-.tkt {
-    /*cell  div*/
-    display: table-cell;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/*health services layout*/
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.servPic {
-    width: auto;
-    height: 50%;
-}
-
-.container1,
-.container2,
-.container3 {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 3%;
-    border-top: 1.0vw solid #2196F3;
-}
-
-.item11 {
-    width: 50%;
-}
-
-.picsHealth {
-    width: 50%;
-}
-
-div.picsHealth,
-div.picsDisabilities,
-div.picsOther {
-    position: relative;
-}
-
-img.servPic {
-    position: absolute;
-    /* margin-left: 100px; */
-}
-
-@keyframes slideShowHealth {
-    0% {
-        opacity: 1;
-    }
-    17% {
-        opacity: 1;
-    }
-    25% {
-        opacity: 0;
-    }
-    92% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.n1,
-.n2,
-.n3,
-.n4,
-.n5,
-.n6 {
-    animation: slideShowHealth 18s ease-in-out infinite;
-}
-
-.picsHealth img:nth-of-type(1) {
-    animation-delay: 15s;
-}
-
-.picsHealth img:nth-of-type(2) {
-    animation-delay: 12s;
-}
-
-.picsHealth img:nth-of-type(3) {
-    animation-delay: 9s;
-}
-
-.picsHealth img:nth-of-type(4) {
-    animation-delay: 6s;
-}
-
-.picsHealth img:nth-of-type(5) {
-    animation-delay: 3s;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/*accesibility  services layout, animations included*/
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.a1,
-.a2,
-.a3,
-.a4 {
-    animation: slideShowHealth 9s ease-in-out infinite;
-}
-
-.picsDisabilities img:nth-of-type(1) {
-    animation-delay: 9s;
-}
-
-.picsDisabilities img:nth-of-type(2) {
-    animation-delay: 6s;
-}
-
-.picsDisabilities img:nth-of-type(3) {
-    animation-delay: 3s;
-}
-
-.picsDisabilities img:nth-of-type(4) {
-    animation-delay: 0s;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/*other  services layout*/
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.o1,
-.o2,
-.o3,
-.o4,
-.o5 {
-    animation: slideShowHealth 15s ease-in-out infinite;
-}
-
-.picsOther img:nth-of-type(1) {
-    animation-delay: 12s;
-}
-
-.picsOther img:nth-of-type(2) {
-    animation-delay: 9s;
-}
-
-.picsOther img:nth-of-type(3) {
-    animation-delay: 6s;
-}
-
-.picsOther img:nth-of-type(4) {
-    animation-delay: 3s;
-}
-
-.picsOther img:nth-of-type(5) {
-    animation-delay: 0s;
-}
-
-
-/*-------------------------------------------------------------------------------------*/
-
-
-/* map and parking lot layout */
-
-
-/*-------------------------------------------------------------------------------------*/
-
-div.map {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 3vw;
-    text-align: center;
-}
-
-div.mapA {
-    flex: 50%;
-}
-
-img.map1 {
-    width: 58%;
-    height: auto;
-    margin: auto;
-}
-
-div.transportation {
-    border-bottom: 1.0vw solid #2196F3;
-}
-
-.parkingLot {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 3vw;
-    text-align: center;
-}
-
-.plA {
-    flex: 50%;
-}
-
-img.parkLotPic {
-    width: 80%;
-    height: auto;
-    margin: auto;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* Reservations layout */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-.reservation {
-    display: flex;
-    flex-wrap: wrap;
-    /* grid-template-columns: 30% 30% 30%; */
-    margin: 0px;
-    padding: 4%;
-    border-top: 1.0vw solid #2196F3;
-}
-
-.flexRsv {
-    flex: 50%;
-}
-
-.ckAvailability {
-    /* display: block; */
-    background: #13366c;
-    color: #f8e803;
-    font-weight: bold;
-    font-size: 1.8vw;
-    text-decoration: none;
-    box-shadow: 2px 2px rgb(141, 139, 139);
-    text-align: center;
-    width: 18vw;
-    height: 2.4vw;
-    border-radius: 50px;
-    cursor: pointer;
-    padding-top: 3px;
-    padding-bottom: 4px;
-}
-
-.makeReservation {
-    /* display: block; */
-    background: #13366c;
-    color: #f8e803;
-    font-weight: bold;
-    font-size: 1.8vw;
-    text-decoration: none;
-    box-shadow: 2px 2px rgb(141, 139, 139);
-    text-align: right;
-    width: 18vw;
-    height: 2.4vw;
-    border-radius: 50px;
-    cursor: pointer;
-    padding-top: 3px;
-    padding-bottom: 4px;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* the following lines include animation for an image using transforma rotate */
-
-
-/* ------------------------------------------------------------------------------------- */
-
-img.tp {
-    transform-origin: 50% 50%;
-    width: 30vw;
-    height: 30vw;
-    border-radius: 1250px;
-    animation: swing2 4s infinite linear alternate;
-}
-
-@keyframes swing2 {
-    from {
-        transform: rotate(2deg);
-    }
-    to {
-        transform: rotate(12deg);
-    }
-}
-
-p.getTkts,
-p.getTkts a {
-    /* display: block; */
-    background: #13366c;
-    color: #f8e803;
-    font-weight: bold;
-    font-size: 1.8vw;
-    text-decoration: none;
-    box-shadow: 2px 2px rgb(141, 139, 139);
-    text-align: center;
-    width: 18vw;
-    height: 2.4vw;
-    border-radius: 50px;
-    cursor: pointer;
-    padding-top: 3px;
-    padding-bottom: 4px;
-}
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/*end of style for page 3.html*/
-
-
-/* ------------------------------------------------------------------------------------- */
-
-
-/* 7. Page: Attractions */
-
-.shows {
-    font-family: 'Roboto', sans-serif;
-}
-
-.ride {
-    font-family: 'Roboto', sans-serif;
-}
-
-.attractionsImage {
-    position: relative;
-    text-align: left;
-    opacity: 0.8;
-}
-
-.featuredAttraction {
-    font-family: 'Righteous', cursive;
-    text-align: center;
-    font-size: calc(10px + 2vw);
-    color: #13366c;
-    /* background-color: #61ad9890;*/
-    border-radius: 5px;
-    text-decoration: none;
-}
-
-.neon2 {
-    color: #13366c;
-    font-family: "Chewy", cursive;
-    font-size: calc(10px + 2.4vw);
-    text-align: center;
-    text-shadow: 0 0 5px #61ad98, 0 0 10px #61ad98, 0 0 20px #61ad98, 0 0 40px #61ad98, 0 0 80px #61ad98, 0 0 90px #61ad98, 0 0 200px #61ad98, 0 0 300px #61ad98;
-}
-
-.ridesShowsTitle {
-    font-family: "Chewy", cursive;
-    text-align: center;
-    font-size: calc(10px + 2vw);
-    color: #13366c;
-    border-radius: 5px;
-}
-
-.rideShowTitle {
-    font-family: "Chewy", cursive;
-    text-align: left;
-    font-size: calc(8px + 1.4vw);
-    color: #13366c
-}
-
-.attractionRideDescription {
-    font-family: "Roboto", sans-serif;
-    text-align: left;
-    font-size: calc(8px + 1.4vw);
-    color: #2a504b;
-}
-
-.grid-container-attractions {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: #61ad98;
-    padding: 10px;
-}
-
-.grid-item-attractions {
-    background-color: #ffffff;
-    border: 8px solid #61ad98;
-    padding: 20px;
-    text-align: left;
-}
-
-.imageresponsive-main {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    max-width: 40%;
-    max-height: 40%;
-    z-index: -1;
-}
-
-.imageresponsive-attractions {
-    float: right;
-    margin-right: 2rem;
-    max-width: 40%;
-    max-height: 40%;
-    z-index: -1;
-}
-
-.attractions-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: calc(8px + 0.8vw);
-}
-
-
-/* 8. Page: Services */
-
-#contacts,
-#security,
-#connected,
-#about,
-#services {
-    text-align: left;
-    font-family: 'Roboto', sans-serif;
-    font-size: calc(8px + 1.2vw);
-    color: rgba(19, 54, 108);
-    margin-bottom: 1rem;
-}
-
-.imageresponsive-services {
-    float: right;
-    max-width: 20%;
-    max-height: 20%;
-    z-index: -1;
-}
-
-.services-page {
-    padding: 3em;
-    margin: 3em;
-}
-
-.services-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: calc(8px + 1vw);
-}
-
-
 /* 9. Footer */
 
 .footerLink {
@@ -1305,4 +483,13 @@ p.getTkts a {
     li>a {
         padding: 2.8px 14px;
     }
+}
+
+
+/* 11. Report */
+
+.reportText {
+    font-family: 'Roboto', sans-serif;
+    font-size: calc(8px + 0.6vw);
+    color: #2a504b;
 }

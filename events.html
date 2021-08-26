@@ -21,7 +21,7 @@
 
 <body>
 
-    <!-- Main background title at top of all pages-->
+    <!-- Main background title logo at top of all pages-->
 
     <header>
         <img src="img/main/logo.png" alt="LEGO Star Wars club logo" id="mainLogo">
@@ -29,7 +29,7 @@
 
     <br>
 
-    <!-- Full web site navigation -->
+    <!-- Site navigation to all five pages -->
 
     <div class="navGrid">
         <div>
@@ -50,16 +50,23 @@
 
     <br>
 
+    <!-- Main welcome message at top of the events page -->
+
     <h1 class="galleryH1">LEGO Star Wars Club Events</h1>
 
     <br>
+
+    <!-- Main welcome logo at top of the events page -->
 
     <img src="img/events/welcome.jpg" alt="LEGO Star Wars events and activities" class="eventsResponsive">
 
     <br>
 
+    <!-- Images representing the six types of events happening at the club -->
+
     <div class="container">
         <div class="row">
+            <!-- first row for small images -->
             <div class="col-md-2">
                 <img id="image1" class="thumbnail" src="img/events/lineup.jpg" alt="Attend Star Wars events" />
             </div>
@@ -80,6 +87,7 @@
             </div>
         </div>
         <div class="row">
+            <!-- second row for single large image -->
             <div class="col-md-1">
                 <button id="backward">&lt;</button>
             </div>
@@ -92,6 +100,7 @@
         </div>
     </div>
 
+    <!-- JaveScript to rotate the first row six small images to the second row large image -->
     <script>
         // start of the gallery images
         var paused = false;
@@ -135,6 +144,31 @@
         }, 2000);
     </script>
 
+    <!-- Footer section -->
+
+    <footer>
+
+        <br>
+
+        <nav class="footerLink">
+            <div class="footerLink">
+                <a class="footerLink" href="index.html">Home</a>
+            </div>
+            <div class="footerLink">
+                <a class="footerLink" href="services.html#contacts">Contacts</a>
+            </div>
+            <div class="footerLink">
+                <a class="footerLink" href="services.html#security">Security & Privacy</a>
+            </div>
+            <div class="footerLink">
+                <a class="footerLink" href="services.html#connected">Stay Connected</a>
+            </div>
+            <div class="footerLink">
+                <a class="footerLink" href="services.html#about">About Us</a>
+            </div>
+        </nav>
+
+    </footer>
 
 </body>
 
