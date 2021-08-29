@@ -620,6 +620,45 @@ input:focus {
     background-color: #15f2fd;
 }
 
+input[type='radio'] {
+    transform: scale(2);
+}
+
+input[type='email'] {
+    height: 30px;
+    width: 300px;
+    float: right;
+}
+
+input[type='text'] {
+    height: 30px;
+    width: 300px;
+    float: right;
+}
+
+input[type='password'] {
+    height: 30px;
+    width: 300px;
+    float: right;
+}
+
+input[type='submit'] {
+    height: 30px;
+    width: 200px;
+}
+
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 #nick {
     margin-top: 10px;
     margin-left: 10px;
@@ -670,6 +709,13 @@ input:focus {
     color: #2E67F8;
     text-align: left;
     margin-left: 0.5rem;
+}
+
+#LEGOStarWarsReviews {
+    font-family: 'Righteous', sans-serif;
+    font-size: calc(8px + 0.4vw);
+    color: #2E67F8;
+    text-align: left;
 }
 
 .servicesFormsGrid {
