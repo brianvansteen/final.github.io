@@ -45,7 +45,7 @@
 
     <section class="servicesBackground">
 
-        <article class="textSizing">
+        <article class="servicesTextSizing">
             <p>
                 <span class="small" id="smallA">A</span>
                 <span class="normal" id="normalA">A</span>
@@ -56,17 +56,200 @@
 
         <br>
 
-        <br>
+        <section class="servicesPageGrid">
 
-        <br>
+            <dl class="servicesPageGridItem">
+                <dt class="servicesTitle"><b>Membership form</b></dt>
+                <dd class="servicesText">
+                    <form>
+                        <label>Your email:
+                            <input type = "email" id = "email_addr" name = "email1" placeholder = "me@me.com" required></label>
+                        <br>
+                        <label>Repeat your email:
+                            <input type = "email" id = "email_repeat" name = "email2" required onchange = "return emailCheck()"></label><br/>
+                        <input type='submit' value="Confirm emails!" onclick="return emailCheck();">
+                    </form>
+                    <br>
+                </dd>
+                <dd class="servicesText">
+                    <form>
+                        <label for="fName">First Name:</label>
+                        <input type="text" name="fName" id="fName" required><br/>
+                        <label for="lName">Last Name:</label>
+                        <input type="text" name="lName" id="lName" required><br/>
+                        <label for="yesNick">Add Star Wars name?</label>
+                        <input id="yesNick" name="yesNick" type="checkbox" value="yes" onchange="nicknameFunction()" /><br/>
 
-        <br>
+                        <div id="nick">
+                            <label for="nickname">Enter nickname:</label>
+                            <input type="text" name="nickname" id="nickname">
+                        </div>
 
-        <section class="responsiveText">
-            <p>sad;lfkjasdf;lkajsdf;lkasjdf;alskdjfas;ldkjfas;lkdfjasd;flj</p>
+                        <p id="verify"><input type="submit" value="Verify" /></p>
+                    </form>
+                    <br>
+                </dd>
+                <dd class="servicesText">
+                    <form>
+                        <label>Create password:
+                            <input type = "password" id = "password_first" name = "password1" required></label>
+                        <br>
+                        <label>Repeat your password:
+                            <input type = "password" id = "password_repeat" name = "password2" required onchange = "return passCheck()"></label><br/>
+                        <input type='submit' value="Confirm password!" onclick="return passCheck();">
+                    </form>
+                    <br>
+                </dd>
+
+            </dl>
+            <dl class="servicesPageGridItem">
+                <dt class="servicesTitle"><b>Rate the MOCS!</b></dt>
+                <dd class="servicesText">Featuring some of the top voted LEGO Star Wars MOCS</dd>
+                <div id="print-content">
+                    <form>
+                        <table width="100%">
+                            <tbody>
+                                <tr>
+                                    <td><label>First Name</label></td>
+                                    <td><input name="First Name" maxlength="255" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Last Name</label></td>
+                                    <td><input name="Last Name" maxlength="255" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Street Address</label></td>
+                                    <td><input name="Street Address" maxlength="255" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>City</label></td>
+                                    <td><input name="City" maxlength="255" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>State</label></td>
+                                    <td><input name="State" maxlength="255" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Zip Code</label></td>
+                                    <td><input name="Zip Code" maxlength="255" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>Phone Number</label></td>
+                                    <td><input name="Phone Number" maxlength="255" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td><label>E-Mail Address</label></td>
+                                    <td><input name="Email Address" maxlength="255" type="text" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><label>Description of item(s) to be serviced</label><br /><textarea name="Items" type="text"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><label>Description of Problem(s)</label><br /><textarea name="Problems" type="text"></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><label>Any Special Notes</label><br /><textarea name="Notes type=" text=""></textarea></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <input type="button" onclick="printDiv('print-table')" value="print a div!" /></form>
+                </div>
+
+                </div>
+            </dl>
+
+
+            <dl class="servicesPageGridItem">
+                <dt class="servicesTitle"><b>Rate the MOCS!</b></dt>
+                <dd class="servicesText">
+                    <form onsubmit="return results();" method="post" action="mail:jennifer@email.com">
+                        <p>Enter First Name:</p>
+                        <input id="pollName" type="text" name="name" />
+                        <br>
+                        <p>Enter email:</p>
+                        <input type="pollEmail" id="email_addr" name="email" placeholder="me@me.com" required/>
+                        <br>
+                        <p>Select your favourite MOC!!</p>
+                        <input id="MOC1" type="radio" name="MOCratings" value="1" />LEGO Star Wars battle <br>
+                        <input id="MOC2" type="radio" name="MOCratings" value="2" />LEGO Star Wars rebel base <br>
+                        <input id="MOC3" type="radio" name="MOCratings" value="3" />LEGO Star Wars base on Naboo <br>
+                        <input id="MOC4" type="radio" name="MOCratings" value="4" />LEGO Star Wars battle <br>
+                        <input id="MOC5" type="radio" name="MOCratings" value="5" />LEGO Star Wars battle <br>
+                        <input id="MOC6" type="radio" name="MOCratings" value="6" />LEGO Star Wars battle <br>
+                        <input id="MOC7" type="radio" name="MOCratings" value="7" />LEGO Star Wars battle <br>
+                        <input id="MOC8" type="radio" name="MOCratings" value="8" />LEGO Star Wars battle <br>
+                        <input id="MOC9" type="radio" name="MOCratings" value="9" />LEGO Star Wars battle <br>
+                        <input id="MOC10" type="radio" name="MOCratings" value="10" />LEGO Star Wars battle <br>
+                        <input id="MOC11" type="radio" name="MOCratings" value="11" />LEGO Star Wars battle <br>
+                        <input id="MOC12" type="radio" name="MOCratings" value="12" />LEGO Star Wars battle <br>
+                        <input id="MOC13" type="radio" name="MOCratings" value="13" />LEGO Star Wars battle <br>
+                        <input id="MOC14" type="radio" name="MOCratings" value="14" />LEGO Star Wars battle <br>
+                        <input id="MOC15" type="radio" name="MOCratings" value="15" />LEGO Star Wars battle <br>
+                        <p>Leave any comments!</p>
+                        <textarea id="comments" name="comments" rows="6" cols="40" placeholder="Your message"></textarea>
+                        <br>
+                        <input id="submit" type="submit" value="Send your vote now!" />
+                    </form>
+                </dd>
+            </dl>
+
+
+
+            <dl class="servicesPageGridItem">
+                <dt class="servicesTitle"><b>Other Serivces</b></dt>
+                <dd class="servicesText">Find details on your club, who to contact, where to find out more information</dd>
+            </dl>
         </section>
+
         <br>
 
+        <section class="servicesFormsGrid">
+
+            <dl class="servicesFormsGridItem">
+                <dt class="servicesFormsTitle"><b>Events</b></dt>
+                <dd class="servicesFormsText">Our club hosts regular events including ...</dd>
+            </dl>
+            <dl class="servicesFormsGridItem">
+                <dt class="servicesFormsTitle"><b>My Own Creations / MOCS</b></dt>
+                <dd class="servicesFormsText">Featuring some of the top voted LEGO Star Wars MOCS</dd>
+            </dl>
+        </section>
+
+        <br>
+
+        <section class="clubDetailsGrid">
+
+            <dl class="clubDetailsGridItem">
+                <dt class="clubDetailsTitle"><b>LEGO Star Wars club contacts</b></dt>
+                <dd class="clubDetailsTextMain">Your club's organizers:</dd>
+                <dd class="clubDetailsTextSecondary">President: Brian "Skywalker" Van Steen - <a href="brian@email.com">brian@email.com</a></dd>
+                <dd class="clubDetailsTextSecondary">Treasurer: John "Chewy" Jacks - <a href="brian@email.com">john@email.com</a></dd>
+                <dd class="clubDetailsTextSecondary">Events: Sarah "" Smith - <a href="brian@email.com">sarah@email.com</a></dd>
+                <dd class="clubDetailsTextSecondary">Web Team: Jennifer "Padme" Amidala - <a href="brian@email.com">jennifer@email.com</a></dd>
+            </dl>
+            <dl class="clubDetailsGridItem">
+                <dt class="clubDetailsTitle"><b>LEGO Star Wars club privacy</b></dt>
+                <dd class="clubDetailsTextMain">The LEGO Stars club follows strict privacy policies</dd>
+                <dd class="clubDetailsTextSecondary">All club member details are kept strictly confidential, and will not be sold or shared with any outside party.</dd>
+            </dl>
+            <dl class="clubDetailsGridItem">
+                <dt class="clubDetailsTitle"><b>LEGO Star Wars club media</b></dt>
+                <dd class="clubDetailsTextMain">Additional details regarding the club's activities are shared as follows:</dd>
+                <dd class="clubDetailsTextSecondary">YouTube:</dd>
+                <dd class="clubDetailsTextSecondary">Facebook:</dd>
+                <dd class="clubDetailsTextSecondary">Instagram:</dd>
+                <dd class="clubDetailsTextSecondary">Twitter:</dd>
+            </dl>
+            <dl class="clubDetailsGridItem">
+                <dt class="clubDetailsTitle"><b>LEGO Star Wars club background</b></dt>
+                <dd class="clubDetailsTextMain">The history of your club</dd>
+                <dd class="clubDetailsTextSecondary">The LEGO Star Wars club was founded in 2006, by Michael "R2D2" MacCrimmon.</dd>
+                <dd class="clubDetailsTextSecondary">The initial .</dd>
+                <dd class="clubDetailsTextSecondary">The initial .</dd>
+                <dd class="clubDetailsTextSecondary">The initial .</dd>
+            </dl>
+
+        </section>
         <br>
 
         <br>
@@ -74,12 +257,19 @@
     </section>
 
 
+    <!-- Footer section -->
 
     <footer>
 
-    </footer>
+        <br>
 
-    <!-- <img src="img/main/services.png" alt="LEGO Star Wars MOCS" class="imageResponsive"> -->
+        <nav class="footerLink">
+            <div class="footerLink">
+                <a class="footerLink" href="index.html">Home</a>
+            </div>
+        </nav>
+
+    </footer>
 
 </body>
 
