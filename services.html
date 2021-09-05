@@ -14,7 +14,7 @@
     <script src="js/script.js" defer></script>
 </head>
 
-<body>
+<body onload="loadReviews()">
 
     <header>
         <img src="img/main/logo.png" alt="LEGO Star Wars club logo" id="mainLogo">
@@ -43,6 +43,12 @@
 
     <br>
 
+    <!-- Main welcome message at top of the MOCS page -->
+
+    <h1 class="galleryH1">LEGO Star Wars club information</h1>
+
+    <br>
+
     <section class="servicesBackground">
 
         <article class="servicesTextSizing">
@@ -59,13 +65,13 @@
         <section class="servicesPageGrid">
 
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle"><b>Membership form</b></dt>
+                <dt class="servicesTitle"><b>Membership form</b></dt><br>
                 <dd class="servicesText">
                     <form>
-                        <label>Your email:
+                        <label class="servicesFormText">Your email:
                             <input type = "email" id = "email_addr" name = "email1" placeholder = "me@me.com" required></label><br/>
                         <br>
-                        <label>Repeat your email:
+                        <label class="servicesFormText">Repeat your email:
                             <input type = "email" id = "email_repeat" name = "email2" required onchange = "return emailCheck()"></label><br/>
                         <input type='submit' value="Confirm emails!" onclick="return emailCheck();">
                     </form>
@@ -91,100 +97,87 @@
                 </dd>
                 <dd class="servicesText">
                     <form>
-                        <label>Create password:
+                        <label class="servicesFormText">Create password:
                             <input type = "password" id = "password_first" name = "password1" required></label><br/>
                         <br>
-                        <label>Repeat your password:
+                        <label class="servicesFormText">Repeat your password:
                             <input type = "password" id = "password_repeat" name = "password2" required onchange = "return passCheck()"></label><br/>
                         <input type='submit' value="Confirm password!" onclick="return passCheck();">
                     </form>
                     <br>
                 </dd>
-
             </dl>
+
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle"><b>Rate the MOCS!</b></dt>
-                <dd class="servicesText">Featuring some of the top voted LEGO Star Wars MOCS</dd>
-                <div id="print-content">
+                <dt class="servicesTitle"><b>Suggest a club event!</b></dt><br>
+                <dd class="servicesText">
                     <form>
-                        <table width="100%">
-                            <tbody>
-                                <tr>
-                                    <td><label>First Name</label></td>
-                                    <td><input name="First Name" maxlength="255" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Last Name</label></td>
-                                    <td><input name="Last Name" maxlength="255" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Street Address</label></td>
-                                    <td><input name="Street Address" maxlength="255" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>City</label></td>
-                                    <td><input name="City" maxlength="255" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>State</label></td>
-                                    <td><input name="State" maxlength="255" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Zip Code</label></td>
-                                    <td><input name="Zip Code" maxlength="255" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Phone Number</label></td>
-                                    <td><input name="Phone Number" maxlength="255" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>E-Mail Address</label></td>
-                                    <td><input name="Email Address" maxlength="255" type="text" /></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><label>Description of item(s) to be serviced</label><br /><textarea name="Items" type="text"></textarea></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><label>Description of Problem(s)</label><br /><textarea name="Problems" type="text"></textarea></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"><label>Any Special Notes</label><br /><textarea name="Notes type=" text=""></textarea></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <input type="button" onclick="printDiv('print-table')" value="print a div!" /></form>
-                </div>
+                        <label class="servicesFormText">First Name:
+                            <input type = "email" id = "email_addr" name = "email1" placeholder = "me@me.com" required></label><br/><br>
+                        <label class="servicesFormText">Enter email:
+                            <input type = "email" id = "email_repeat" name = "email2" required onchange = "return emailCheck()"></label><br/>
+                    </form>
+                    <br>
+                </dd>
+                <dd class="servicesText">
+                    <form>
+                        <label for="fName">First Name:</label>
+                        <input type="text" name="fName" id="fName" required><br/>
+                        <label for="lName">Last Name:</label>
+                        <input type="text" name="lName" id="lName" required><br/>
+                        <label for="yesStarWarsName">Add Star Wars name?</label>
+                        <input id="yesStarWarsName" name="yesStarWarsName" type="checkbox" value="yes" onchange="StarWarsNameFunction()" /><br/>
+                        <div id="nick">
+                            <br>
+                            <label for="nickname">Enter Star Wars name:</label>
+                            <input type="text" name="nickname" id="nickname"><br/>
+                        </div>
 
-                </div>
+                        <p id="verify"><input type="submit" value="Verify" /></p>
+                    </form>
+                    <br>
+                </dd>
+                <dd class="servicesText">
+                    <form>
+                        <label class="servicesFormText">Create password:
+                            <input type = "password" id = "password_first" name = "password1" required></label><br/>
+                        <br>
+                        <label class="servicesFormText">Repeat your password:
+                            <input type = "password" id = "password_repeat" name = "password2" required onchange = "return passCheck()"></label><br/>
+                        <input type='submit' value="Confirm password!" onclick="return passCheck();">
+                    </form>
+                    <br>
+                </dd>
             </dl>
 
 
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle"><b>Rate the MOCS!</b></dt>
+                <dt class="servicesTitle"><b>Rate the MOCS!</b></dt><br>
                 <dd class="servicesText">
                     <form onsubmit="results();" method="post">
-                        <label>Enter First Name:</label>
+                        <label class="servicesFormText">First Name:</label>
                         <input id="pollName" type="text" name="name" /><br/>
                         <br>
-                        <label>Enter email:</label>
+                        <label class="servicesFormText">Enter email:</label>
                         <input id="pollEmail" type="email" name="email" placeholder="me@me.com" required/><br/>
                         <br>
-                        <p>Select your favourite MOC!!</p>
-                        <input id="MOC1" type="radio" name="MOCratings" value="1" /> 1. LEGO Star Wars battle <br>
-                        <input id="MOC2" type="radio" name="MOCratings" value="2" /> 2. LEGO Star Wars rebel base <br>
-                        <input id="MOC3" type="radio" name="MOCratings" value="3" /> 3. LEGO Star Wars base on Naboo <br>
-                        <input id="MOC4" type="radio" name="MOCratings" value="4" /> 4. LEGO Star Wars light saber duel <br>
-                        <input id="MOC5" type="radio" name="MOCratings" value="5" /> 5. LEGO Star Wars battle of Kashyyyk <br>
-                        <input id="MOC6" type="radio" name="MOCratings" value="6" /> 6: LEGO Star Wars swamp mission<br>
-                        <input id="MOC7" type="radio" name="MOCratings" value="7" /> 7: LEGO Star Wars abandoned clone base <br>
-                        <input id="MOC8" type="radio" name="MOCratings" value="8" /> 8: LEGO Star Wars medium transport <br>
-                        <input id="MOC9" type="radio" name="MOCratings" value="9" /> 9: LEGO Star Wars Star Destroyers crashing <br>
-                        <input id="MOC10" type="radio" name="MOCratings" value="10" /> 10: LEGO Star Wars battle of Geonosis <br>
-                        <input id="MOC11" type="radio" name="MOCratings" value="11" /> 11: LEGO Star Wars Tatooine cantina <br>
-                        <input id="MOC12" type="radio" name="MOCratings" value="12" /> 12: LEGO Star Wars assembly <br>
-                        <input id="MOC13" type="radio" name="MOCratings" value="13" /> 13: Mustafar<br>
-                        <input id="MOC14" type="radio" name="MOCratings" value="14" /> 14: Gladiator-class Star Destroyer <br>
-                        <input id="MOC15" type="radio" name="MOCratings" value="15" /> 15: Survival on Dantooine <br>
+                        <br>
+                        <p class="servicesFormsText">Select your favourite MOC!!</p>
+                        <input id="MOC1" type="radio" name="MOCratings" value="1" /> 1. LEGO Star Wars battle <br><br>
+                        <input id="MOC2" type="radio" name="MOCratings" value="2" /> 2. LEGO Star Wars rebel base <br><br>
+                        <input id="MOC3" type="radio" name="MOCratings" value="3" /> 3. LEGO Star Wars base on Naboo <br><br>
+                        <input id="MOC4" type="radio" name="MOCratings" value="4" /> 4. LEGO Star Wars light saber duel <br><br>
+                        <input id="MOC5" type="radio" name="MOCratings" value="5" /> 5. LEGO Star Wars battle of Kashyyyk <br><br>
+                        <input id="MOC6" type="radio" name="MOCratings" value="6" /> 6: LEGO Star Wars swamp mission<br><br>
+                        <input id="MOC7" type="radio" name="MOCratings" value="7" /> 7: LEGO Star Wars abandoned clone base <br><br>
+                        <input id="MOC8" type="radio" name="MOCratings" value="8" /> 8: LEGO Star Wars medium transport <br><br>
+                        <input id="MOC9" type="radio" name="MOCratings" value="9" /> 9: LEGO Star Wars Star Destroyers crashing <br><br>
+                        <input id="MOC10" type="radio" name="MOCratings" value="10" /> 10: LEGO Star Wars battle of Geonosis <br><br>
+                        <input id="MOC11" type="radio" name="MOCratings" value="11" /> 11: LEGO Star Wars Tatooine cantina <br><br>
+                        <input id="MOC12" type="radio" name="MOCratings" value="12" /> 12: LEGO Star Wars assembly <br><br>
+                        <input id="MOC13" type="radio" name="MOCratings" value="13" /> 13: Mustafar<br><br>
+                        <input id="MOC14" type="radio" name="MOCratings" value="14" /> 14: Gladiator-class Star Destroyer <br><br>
+                        <input id="MOC15" type="radio" name="MOCratings" value="15" /> 15: Survival on Dantooine <br><br>
                         <p>Leave any comments!</p>
                         <textarea id="pollComments" name="comments" rows="6" cols="40" placeholder="Your message"></textarea>
                         <br>
@@ -196,12 +189,12 @@
 
 
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle"><b>Other Serivces</b></dt>
-                <dd class="servicesText">Find details on your club, who to contact, where to find out more information</dd>
+                <dt class="servicesTitle" id=suggestReview><b>Suggest a review!</b></dt><br>
+                <dd class="servicesText">What is your favourite LEGO Star Wars kit that has been reviewed?</dd>
 
-                <div onload="loadPlaces()">
+                <div>
 
-                    <button onclick="myFunction()">Add a review!</button>
+                    <button onclick="submitFunction()">Add a review to our list!</button>
 
                     <p id="LEGOStarWarsReviews"></p>
 
@@ -216,12 +209,16 @@
 <section class="servicesFormsGrid">
 
     <dl class="servicesFormsGridItem">
-        <dt class="servicesFormsTitle"><b>Events</b></dt>
+        <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="events.html">Our Events!</a></b></dt>
         <dd class="servicesFormsText">Our club hosts regular events including ...</dd>
     </dl>
     <dl class="servicesFormsGridItem">
-        <dt class="servicesFormsTitle"><b>My Own Creations / MOCS</b></dt>
+        <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="mocs.html">Featured MOCS!</a></b></dt>
         <dd class="servicesFormsText">Featuring some of the top voted LEGO Star Wars MOCS</dd>
+    </dl>
+    <dl class="servicesFormsGridItem">
+        <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="reviews.html">Great reviews!</a></b></dt>
+        <dd class="servicesFormsText">Some exiting LEGO Star Wars kits to build</dd>
     </dl>
 </section>
 
@@ -230,33 +227,41 @@
 <section class="clubDetailsGrid">
 
     <dl class="clubDetailsGridItem">
-        <dt class="clubDetailsTitle"><b>LEGO Star Wars club contacts</b></dt>
+        <dt class="clubDetailsTitle" id="clubContacts"><b>LEGO Star Wars club contacts</b></dt>
         <dd class="clubDetailsTextMain">Your club's organizers:</dd>
         <dd class="clubDetailsTextSecondary">President: Brian "Skywalker" Van Steen - <a href="brian@email.com">brian@email.com</a></dd>
         <dd class="clubDetailsTextSecondary">Treasurer: John "Chewy" Jacks - <a href="brian@email.com">john@email.com</a></dd>
-        <dd class="clubDetailsTextSecondary">Events: Sarah "" Smith - <a href="brian@email.com">sarah@email.com</a></dd>
+        <dd class="clubDetailsTextSecondary">Events: Sarah "Leia" Smith - <a href="brian@email.com">sarah@email.com</a></dd>
         <dd class="clubDetailsTextSecondary">Web Team: Jennifer "Padme" Amidala - <a href="brian@email.com">jennifer@email.com</a></dd>
     </dl>
     <dl class="clubDetailsGridItem">
-        <dt class="clubDetailsTitle"><b>LEGO Star Wars club privacy</b></dt>
+        <dt class="clubDetailsTitle" id="clubPrivacy"><b>LEGO Star Wars club privacy</b></dt>
         <dd class="clubDetailsTextMain">The LEGO Stars club follows strict privacy policies</dd>
         <dd class="clubDetailsTextSecondary">All club member details are kept strictly confidential, and will not be sold or shared with any outside party.</dd>
     </dl>
     <dl class="clubDetailsGridItem">
-        <dt class="clubDetailsTitle"><b>LEGO Star Wars club media</b></dt>
+        <dt class="clubDetailsTitle" id="clubMedia"><b>LEGO Star Wars club media</b></dt>
         <dd class="clubDetailsTextMain">Additional details regarding the club's activities are shared as follows:</dd>
-        <dd class="clubDetailsTextSecondary">YouTube:</dd>
-        <dd class="clubDetailsTextSecondary">Facebook:</dd>
-        <dd class="clubDetailsTextSecondary">Instagram:</dd>
-        <dd class="clubDetailsTextSecondary">Twitter:</dd>
+        <a href="https://www.youtube.com/">
+            <dd class="clubDetailsTextSecondary">YouTube</dd>
+        </a>
+        <a href="https://www.facebook.com/">
+            <dd class="clubDetailsTextSecondary">Facebook</dd>
+        </a>
+        <a href="https://www.instagram.com/">
+            <dd class="clubDetailsTextSecondary">Instagram</dd>
+        </a>
+        <a href="https://www.twitter.com/">
+            <dd class="clubDetailsTextSecondary">Twitter</dd>
+        </a>
     </dl>
     <dl class="clubDetailsGridItem">
-        <dt class="clubDetailsTitle"><b>LEGO Star Wars club background</b></dt>
+        <dt class="clubDetailsTitle" id="clubBackground"><b>LEGO Star Wars club background</b></dt>
         <dd class="clubDetailsTextMain">The history of your club</dd>
         <dd class="clubDetailsTextSecondary">The LEGO Star Wars club was founded in 2006, by Michael "R2D2" MacCrimmon.</dd>
-        <dd class="clubDetailsTextSecondary">The initial .</dd>
-        <dd class="clubDetailsTextSecondary">The initial .</dd>
-        <dd class="clubDetailsTextSecondary">The initial .</dd>
+        <dd class="clubDetailsTextSecondary">The first meeting of the club took place on June 17, 2006.</dd>
+        <dd class="clubDetailsTextSecondary">The membership has grown from 5 at that first meeting, to more than 200 Jedis!</dd>
+        <dd class="clubDetailsTextSecondary">We host more than 10 events every year.</dd>
     </dl>
 
 </section>

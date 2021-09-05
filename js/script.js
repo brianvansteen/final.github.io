@@ -1,9 +1,9 @@
 // Change text size code --------------------------------------------------------------------------
 
-document.getElementById("smallA").onclick = function() { changeSize("small") };
-document.getElementById("normalA").onclick = function() { changeSize("normal") };
-document.getElementById("mediumA").onclick = function() { changeSize("medium") };
-document.getElementById("largeA").onclick = function() { changeSize("large") };
+// document.getElementById("smallA").onclick = function() { changeSize("small") };
+// document.getElementById("normalA").onclick = function() { changeSize("normal") };
+// document.getElementById("mediumA").onclick = function() { changeSize("medium") };
+// document.getElementById("largeA").onclick = function() { changeSize("large") };
 
 
 function changeSize(size) {
@@ -120,88 +120,26 @@ function results() {
 
     var comments = document.getElementById('pollComments').value;
 
-    document.write("<h1>Thank you!</h1>");
-    document.write("<p>Your vote has been counted!</p>");
-
-    document.write("<h3>Your vote for your favourite MOC:</h3>");
-
-    document.write(name + "<br>");
-    document.write(email + "<br>");
-    document.write(poll + "<br>");
-    document.write(comments + "<br>");
-
     alert("Thank you! Your vote for MOC " + poll + " was submitted.");
 
 }
 
 // List of LEGO Star Warsn reviews ----------------------------------------------------------------
 
-var reviewsLEGO = [];
+var reviewsLEGO = ["75290 Mos Eisley Cantina", "75252 Imperial Star Destroyer"];
 
-function loadPlaces() {
+function loadReviews() {
     document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGO;
 }
 
-function myFunction() {
+function submitFunction() {
     var newReview = prompt("What LEGO Star Wars kit should be reviewed?");
-    reviewsLEGO[reviewsLEGO.length] = " " + newReview;
-    document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGO;
-}
-
-function submit() {
-    var name = document.getElementById("enter");
-    var theName = name.value;
-    names.push(theName);
-    document.getElementById("name").innerHTML = "";
-    for (var I = 0; I < names.length; I++) {
-        nameList = "<li>" + names[I] + "</li>";
-        document.getElementById("name").innerHTML += nameList;
+    reviewsLEGO.push(newReview);
+    reviewsLEGOList = "";
+    for (var i = 0, newReview; newReview = reviewsLEGO[i]; i++) {
+        reviewsLEGOList += "<li>" + newReview + "</li>";
     }
+    document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGOList;
 }
 
-// https://stackoverflow.com/questions/28677745/make-a-html-unordered-list-from-javascript-array/28677901
-
-
-var messageGen = function() {
-    var forecastByHour = [32, 15, 19, 25, 21];
-
-
-    for (var i = 0; i <= forecastByHour.length; i++) {
-        var temp = forecastByHour[i];
-        var message = "On the " + [i] + " hour the expected forcase is to be" + temp;
-        var listItems = document.createElement("li");
-
-        listItems.innerHTML = message
-    }
-
-}
-
-// https://stackoverflow.com/questions/43567079/simpler-way-to-print-array-items-into-list-items-javascript  
-
-// function addRowToTable() {
-//     var tbl = document.getElementById('tblSample');
-//     var lastRow = tbl.rows.length;
-//     // if there's no header row in the table, then iteration = lastRow + 1
-//     var iteration = lastRow;
-//     var row = tbl.insertRow(lastRow);
-
-//     // left cell
-//     var cellLeft = row.insertCell(0);
-//     var textNode = document.createTextNode(iteration);
-//     cellLeft.appendChild(textNode);
-
-//     // right cell
-//     var cellRight = row.insertCell(1);
-//     var el = document.createElement('input');
-//     el.type = 'text';
-//     el.name = 'txtRow' + iteration;
-//     el.id = 'txtRow' + iteration;
-//     el.size = 40;
-//     cellRight.appendChild(el);
-// }
-
-// function removeRowFromTable() {
-//     var tbl = document.getElementById('tblSample');
-//     var lastRow = tbl.rows.length;
-//     if (lastRow > 2) tbl.deleteRow(lastRow - 1);
-// }
+//https://sebhastian.com/javascript-print-array/

@@ -240,7 +240,6 @@ header>#mainLogo {
     text-align: center;
     font-size: calc(10px + 2vw);
     color: #2E67F8;
-    text-decoration: none;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -346,8 +345,7 @@ img.tp:hover {
 
 .eventsPageGrid {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
     grid-gap: 1rem;
     padding: 0px;
     border: 5px solid #2E67F8;
@@ -418,7 +416,7 @@ main.gallery {
 .gallery>.gallery__list>li>h3 {
     font-family: 'distantgalaxy', sans-serif;
     font-size: calc(8px + 1vw);
-    color: #2a504b;
+    color: #2E67F8;
     margin: 0px;
 }
 
@@ -445,6 +443,49 @@ main.gallery {
     bottom: 0;
     content: attr(title);
     display: block;
+}
+
+.featuredContainer {
+    position: relative;
+    text-align: center;
+    font-family: 'distantgalaxy', sans-serif;
+    font-size: calc(8px + 1vw);
+    color: #2E67F8;
+    border: 2px solid black;
+}
+
+.featuredContainer>figure>img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.2;
+    padding-bottom: 1em;
+    margin-bottom: 5px;
+}
+
+.featuredContainer>figure>img:hover {
+    opacity: 1.0;
+    transition: transform .75s;
+    transition-delay: 1s;
+    transform: scale(1.5);
+    width: 100%;
+    height: 100%;
+    margin: 1em;
+}
+
+.featuredContainer>figure>img::after {
+    bottom: 0;
+    content: attr(title);
+    display: block;
+}
+
+.featuredTopLeft {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-family: 'distantgalaxy', sans-serif;
+    font-size: calc(8px + 2vw);
+    color: red;
 }
 
 
@@ -534,6 +575,7 @@ main.gallery {
     background-color: rgb(255, 255, 255);
     border-radius: 2px;
     margin-bottom: 2rem;
+    margin-right: 5px;
 }
 
 .reviewsPageGridTitle {
@@ -593,6 +635,23 @@ main.gallery {
     border: none;
 }
 
+.suggestReview {
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: calc(10px + 2vw);
+    color: #2E67F8;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.suggestReviewLink {
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: calc(8px + 1vw);
+    color: #2E67F8;
+    text-decoration: none;
+}
+
 
 /* .iframe-wrapper>iframe {
     display: inline-block;
@@ -604,7 +663,7 @@ main.gallery {
 /* 8. Page 5: Services -------------------------------------------------------------- */
 
 .servicesBackground {
-    /* ----- background image ------------------------------------- */
+    /* ----- background image ------------------------------------------------------- */
     background-image: url("../img/main/services.png");
     background-position: center;
     min-height: 900px;
@@ -622,29 +681,36 @@ input:focus {
 
 input[type='radio'] {
     transform: scale(2);
+    margin-right: 20px;
 }
 
 input[type='email'] {
     height: 30px;
-    width: 300px;
+    width: 60%;
     float: right;
 }
 
 input[type='text'] {
     height: 30px;
-    width: 300px;
+    width: 60%;
     float: right;
 }
 
 input[type='password'] {
     height: 30px;
-    width: 300px;
+    width: 60%;
     float: right;
 }
 
 input[type='submit'] {
+    margin-top: 1em;
     height: 30px;
-    width: 200px;
+    width: 60%;
+}
+
+.servicesFormText {
+    font-size: calc(8px + 0.8vw);
+    margin-top: 1em;
 }
 
 .button {
@@ -676,10 +742,12 @@ input[type='submit'] {
 }
 
 .servicesPageGrid {
-    /* ----- forms entry grid section ------------------------------- */
+    /* ----- services forms entry grid section -------------------------------------- */
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-template-rows: auto auto;
+    /* grid-template-columns: auto auto auto auto; */
+    /* grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr)); */
+    grid-template-columns: repeat(auto-fill, minmax(4rem, 36rem));
+    /* grid-template-rows: auto auto; */
     gap: 0.5rem;
     padding: 0px;
     border: 5px solid #2E67F8;
@@ -690,7 +758,6 @@ input[type='submit'] {
 
 .servicesPageGridItem {
     padding: 20px;
-    font-size: calc(8px + 1.4vw);
     font-size: calc(8px + 1.4vw);
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -705,7 +772,7 @@ input[type='submit'] {
 
 .servicesText {
     font-family: 'Righteous', sans-serif;
-    font-size: calc(8px + 0.4vw);
+    font-size: calc(8px + 0.6vw);
     color: #2E67F8;
     text-align: left;
     margin-left: 0.5rem;
@@ -713,17 +780,15 @@ input[type='submit'] {
 
 #LEGOStarWarsReviews {
     font-family: 'Righteous', sans-serif;
-    font-size: calc(8px + 0.4vw);
+    font-size: calc(8px + 0.6vw);
     color: #2E67F8;
     text-align: left;
 }
 
 .servicesFormsGrid {
-    /* ----- forms display grid section ---------------------------- */
+    /* ----- services information grid section -------------------------------------- */
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 0.5rem;
     padding: 0px;
     border: 5px solid #2E67F8;
@@ -743,9 +808,11 @@ input[type='submit'] {
 
 .servicesFormsTitle {
     font-family: 'Righteous', sans-serif;
-    font-size: calc(8px + 1.2vw);
+    font-size: calc(8px + 1.4vw);
     color: #2E67F8;
+    background-color: #2E67F822;
     text-align: left;
+    text-decoration: none;
 }
 
 .servicesFormsText {
@@ -757,9 +824,9 @@ input[type='submit'] {
 }
 
 .clubDetailsGrid {
-    /* ----- clud details grid section ------------------------------- */
+    /* ----- clud details grid section ---------------------------------------------- */
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: auto auto;
     gap: 0.5rem;
     padding: 0px;
