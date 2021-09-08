@@ -1,14 +1,14 @@
-// Change text size code --------------------------------------------------------------------------
+// // Change text size code --------------------------------------------------------------------------
 
-// document.getElementById("smallA").onclick = function() { changeSize("small") };
-// document.getElementById("normalA").onclick = function() { changeSize("normal") };
-// document.getElementById("mediumA").onclick = function() { changeSize("medium") };
-// document.getElementById("largeA").onclick = function() { changeSize("large") };
+// document.getElementById("smallA").onclick = function() { changeSize("smallresponsiveText") };
+// document.getElementById("normalA").onclick = function() { changeSize("responsiveText") };
+// document.getElementById("mediumA").onclick = function() { changeSize("mediumresponiveText") };
+// document.getElementById("largeA").onclick = function() { changeSize("largeresponsiveText") };
 
 
-function changeSize(size) {
-    document.getElementsByTagName("section")[0].className = size
-};
+// function changeSize(size) {
+//     document.getElementsByTagName("section").className = size
+// };
 
 // Confirm matching emails ------------------------------------------------------------------------
 
@@ -42,21 +42,23 @@ function StarWarsNameFunction() {
     }
 }
 
-var membtn = document.getElementById("membershipButton");
-
-function memsubmit() {
-    membtn.textContent = "Your details have been submitted!"
-    document.getElementById("membershipForm").reset();
-}
-membtn.addEventListener("click", memsubmit, false);
-
 var eventbtn = document.getElementById("eventsButton");
 
 function eventsubmit() {
-    eventbtn.textContent = "Your suggestion has been submitted!"
+    alert("Your suggestion has been submitted!")
+        //eventbtn.textContent = "Your suggestion has been submitted!"
     document.getElementById("eventsForm").reset();
 }
 eventbtn.addEventListener("click", eventsubmit, false);
+
+var membtn = document.getElementById("membershipButton");
+
+function memsubmit() {
+    alert("Your details have been submitted!")
+        //membtn.textContent = "Your details have been submitted!"
+    document.getElementById("membershipForm").reset();
+}
+membtn.addEventListener("click", memsubmit, false);
 
 // Vote for favourite MOC -------------------------------------------------------------------------
 
@@ -124,5 +126,3 @@ function submitFunction() {
     }
     document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGOList;
 }
-
-//https://sebhastian.com/javascript-print-array/

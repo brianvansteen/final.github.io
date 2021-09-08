@@ -84,11 +84,59 @@
 }
 
 .responsiveText {
+    text-align: left;
+    font-size: calc(8px + 0.8vw);
+    color: #2E67F8;
+    padding-bottom: 5px;
+    margin-left: 5%;
+}
+
+.responsiveText>p {
     font-family: 'Righteous', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.smallresponsiveText {
+    text-align: left;
+    font-size: calc(8px + 0.4vw);
+    color: #2E67F8;
+    padding-bottom: 5px;
+    margin-left: 5%;
+}
+
+.smallresponsiveText>p {
+    font-family: 'Righteous', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.mediumresponsiveText {
+    text-align: left;
     font-size: calc(8px + 1vw);
     color: #2E67F8;
+    padding-bottom: 5px;
+    margin-left: 5%;
+}
+
+.mediumresponsiveText>p {
+    font-family: 'Righteous', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.largeresponsiveText {
     text-align: left;
-    padding-bottom: 10px;
+    font-size: calc(8px + 1.4vw);
+    color: #2E67F8;
+    padding-bottom: 5px;
+    margin-left: 5%;
+}
+
+.largeresponsiveText>p {
+    font-family: 'Righteous', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 
