@@ -15,10 +15,9 @@ function changeSize(size) {
 function emailCheck() {
     var email1 = document.getElementById('email_addr');
     var email2 = document.getElementById('email_repeat');
-    if (email1.value != email2.value) {
-        alert("The two emails do not match!!");
-        return false;
-    }
+    if (email1.value === email2.value) {
+        alert("The two emails match.");
+    } else { alert("The two emails do not match!!"); }
 };
 
 // Confirm matching passwords ---------------------------------------------------------------------
@@ -26,10 +25,9 @@ function emailCheck() {
 function passCheck() {
     var pass1 = document.getElementById('password_first');
     var pass2 = document.getElementById('password_repeat');
-    if (pass1.value != pass2.value) {
-        alert("The two passwords do not match!!");
-        return false;
-    }
+    if (pass1.value === pass2.value) {
+        alert("The two passwords match.");
+    } else { alert("The two passwords do not match!!"); }
 };
 
 // Allow Star Wars name ---------------------------------------------------------------------------
@@ -44,41 +42,21 @@ function StarWarsNameFunction() {
     }
 }
 
+var membtn = document.getElementById("membershipButton");
 
-// function printDiv(divName) {
-//     //alert('s');
-//     var printContents = '<div id="print-content"><form><table width="30%"><tbody>';
-//     var inputs, index;
+function memsubmit() {
+    membtn.textContent = "Your details have been submitted!"
+    document.getElementById("membershipForm").reset();
+}
+membtn.addEventListener("click", memsubmit, false);
 
-//     inputs = document.getElementsByTagName('input');
-//     for (index = 0; index < inputs.length - 1; ++index) {
+var eventbtn = document.getElementById("eventsButton");
 
-//         var fieldName = inputs[index].name;
-//         var fieldValue = inputs[index].value;
-
-//         printContents += '<tr><td><label>' + fieldName + '</label></td>';
-//         printContents += '<td>' + fieldValue + '</td></tr>';
-//     }
-
-//     var z = 8; // if you had more labels remeber to change this value 
-//     inputs = document.getElementsByTagName('textarea');
-//     for (index = 0; index < inputs.length; ++index) {
-
-//         //var fieldName = inputs[index].name;
-//         var fieldName = document.getElementsByTagName('label')[z].textContent;
-//         var fieldValue = inputs[index].value;
-
-//         printContents += '<tr><td colspan="2"><label>' + fieldName + '</label><br>' + fieldValue + '</td></tr>';
-//         ++z;
-//     }
-
-//     printContents += '</tbody></table>';
-
-//     w = window.open();
-//     w.document.write(printContents);
-//     w.print();
-//     w.close();
-// };
+function eventsubmit() {
+    eventbtn.textContent = "Your suggestion has been submitted!"
+    document.getElementById("eventsForm").reset();
+}
+eventbtn.addEventListener("click", eventsubmit, false);
 
 // Vote for favourite MOC -------------------------------------------------------------------------
 
@@ -120,16 +98,21 @@ function results() {
 
     var comments = document.getElementById('pollComments').value;
 
-    alert("Thank you! Your vote for MOC " + poll + " was submitted.");
+    alert("Thank you " + name + " " + email + "! Your vote for MOC " + poll + " and your comments " + comments + " wwere submitted.");
 
 }
 
-// List of LEGO Star Warsn reviews ----------------------------------------------------------------
+// List of LEGO Star Wars reviews -----------------------------------------------------------------
 
 var reviewsLEGO = ["75290 Mos Eisley Cantina", "75252 Imperial Star Destroyer"];
 
 function loadReviews() {
-    document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGO;
+    reviewsLEGOList = "";
+    for (var i = 0; i < reviewsLEGO.length; i++) {
+        reviewsLEGOList += "<li>" + reviewsLEGO[i] + "</li>";
+    }
+    document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGOList;
+    // document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGO;
 }
 
 function submitFunction() {

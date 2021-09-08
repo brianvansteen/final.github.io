@@ -45,7 +45,7 @@
 
     <!-- Main welcome message at top of the MOCS page -->
 
-    <h1 class="galleryH1">LEGO Star Wars club information</h1>
+    <h1 class="servicesH1">LEGO Star Wars club information</h1>
 
     <br>
 
@@ -67,99 +67,73 @@
             <dl class="servicesPageGridItem">
                 <dt class="servicesTitle"><b>Membership form</b></dt><br>
                 <dd class="servicesText">
-                    <form>
+                    <form id="membershipForm">
                         <label class="servicesFormText">Your email:
-                            <input type = "email" id = "email_addr" name = "email1" placeholder = "me@me.com" required></label><br/>
+                            <input type = "email" id = "email_addr" name = "email1" placeholder = "me@mail.com" required></label><br/>
                         <br>
                         <label class="servicesFormText">Repeat your email:
-                            <input type = "email" id = "email_repeat" name = "email2" required onchange = "return emailCheck()"></label><br/>
-                        <input type='submit' value="Confirm emails!" onclick="return emailCheck();">
-                    </form>
-                    <br>
-                </dd>
-                <dd class="servicesText">
-                    <form>
-                        <label for="fName">First Name:</label>
-                        <input type="text" name="fName" id="fName" required><br/>
-                        <label for="lName">Last Name:</label>
-                        <input type="text" name="lName" id="lName" required><br/>
-                        <label for="yesStarWarsName">Add Star Wars name?</label>
+                            <input type = "email" id = "email_repeat" name = "email2" placeholder = "me@mail.com" required onchange = "return emailCheck()"></label><br/>
+                        <br>
+                        <input type='button' value="Confirm emails!" onclick="emailCheck();"><br/>
+                        <br>
+                        <label class="servicesFormText" for="fName">First Name:</label>
+                        <input type="text" name="fName" id="fName" placeholder="First name" required><br/><br/>
+                        <br>
+                        <label class="servicesFormText" for="lName">Surname:</label>
+                        <input type="text" name="lName" id="lName" placeholder="Surname" required><br/><br/>
+                        <label class="servicesFormText" for="yesStarWarsName">Add Star Wars name?</label>
                         <input id="yesStarWarsName" name="yesStarWarsName" type="checkbox" value="yes" onchange="StarWarsNameFunction()" /><br/>
                         <div id="nick">
                             <br>
-                            <label for="nickname">Enter Star Wars name:</label>
+                            <label for="nickname">Star Wars name:</label>
                             <input type="text" name="nickname" id="nickname"><br/>
                         </div>
-
-                        <p id="verify"><input type="submit" value="Verify" /></p>
-                    </form>
-                    <br>
-                </dd>
-                <dd class="servicesText">
-                    <form>
+                        <br>
                         <label class="servicesFormText">Create password:
                             <input type = "password" id = "password_first" name = "password1" required></label><br/>
                         <br>
-                        <label class="servicesFormText">Repeat your password:
+                        <label class="servicesFormText">Repeat password:
                             <input type = "password" id = "password_repeat" name = "password2" required onchange = "return passCheck()"></label><br/>
-                        <input type='submit' value="Confirm password!" onclick="return passCheck();">
+                        <br>
+                        <input type='button' value="Confirm password!" onclick="return passCheck();">
                     </form>
                     <br>
+                    <button id="membershipButton">Submit membership request!</button>
                 </dd>
             </dl>
 
             <dl class="servicesPageGridItem">
                 <dt class="servicesTitle"><b>Suggest a club event!</b></dt><br>
                 <dd class="servicesText">
-                    <form>
+                    <form id="eventsForm">
                         <label class="servicesFormText">First Name:
-                            <input type = "email" id = "email_addr" name = "email1" placeholder = "me@me.com" required></label><br/><br>
+                            <input type="text" name="fName" id="fName" required><br/></label><br/><br>
                         <label class="servicesFormText">Enter email:
-                            <input type = "email" id = "email_repeat" name = "email2" required onchange = "return emailCheck()"></label><br/>
+                            <input type = "email" id = "email_addr" name = "email1" placeholder = "me@mail.com" required></label><br/><br>
+                        <label class="servicesFormText">Event Name:
+                                <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                        <label class="servicesFormText">Event Type:
+                                    <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                        <label class="servicesFormText">Event Timing:
+                                        <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                        <label class="servicesFormText">Event Location:
+                                            <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                        <textarea id="pollComments" name="comments" rows="6" cols="40" placeholder="Event description"></textarea>
                     </form>
-                    <br>
-                </dd>
-                <dd class="servicesText">
-                    <form>
-                        <label for="fName">First Name:</label>
-                        <input type="text" name="fName" id="fName" required><br/>
-                        <label for="lName">Last Name:</label>
-                        <input type="text" name="lName" id="lName" required><br/>
-                        <label for="yesStarWarsName">Add Star Wars name?</label>
-                        <input id="yesStarWarsName" name="yesStarWarsName" type="checkbox" value="yes" onchange="StarWarsNameFunction()" /><br/>
-                        <div id="nick">
-                            <br>
-                            <label for="nickname">Enter Star Wars name:</label>
-                            <input type="text" name="nickname" id="nickname"><br/>
-                        </div>
-
-                        <p id="verify"><input type="submit" value="Verify" /></p>
-                    </form>
-                    <br>
-                </dd>
-                <dd class="servicesText">
-                    <form>
-                        <label class="servicesFormText">Create password:
-                            <input type = "password" id = "password_first" name = "password1" required></label><br/>
-                        <br>
-                        <label class="servicesFormText">Repeat your password:
-                            <input type = "password" id = "password_repeat" name = "password2" required onchange = "return passCheck()"></label><br/>
-                        <input type='submit' value="Confirm password!" onclick="return passCheck();">
-                    </form>
-                    <br>
+                    <button id="eventsButton">Submit events suggestion!</button>
                 </dd>
             </dl>
 
 
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle"><b>Rate the MOCS!</b></dt><br>
+                <dt class="servicesTitle" id="voteMOC"><b>Rate the MOCS!</b></dt><br>
                 <dd class="servicesText">
-                    <form onsubmit="results();" method="post">
+                    <form onsubmit="results();">
                         <label class="servicesFormText">First Name:</label>
                         <input id="pollName" type="text" name="name" /><br/>
                         <br>
                         <label class="servicesFormText">Enter email:</label>
-                        <input id="pollEmail" type="email" name="email" placeholder="me@me.com" required/><br/>
+                        <input id="pollEmail" type="email" name="email" placeholder="me@mail.com" required/><br/>
                         <br>
                         <br>
                         <p class="servicesFormsText">Select your favourite MOC!!</p>
@@ -181,7 +155,7 @@
                         <p>Leave any comments!</p>
                         <textarea id="pollComments" name="comments" rows="6" cols="40" placeholder="Your message"></textarea>
                         <br>
-                        <input id="submit" type="submit" value="Send your vote now!" />
+                        <input id="submitMOC" type="submit" value="Send your vote now!" />
                     </form>
                 </dd>
             </dl>
@@ -194,7 +168,7 @@
 
                 <div>
 
-                    <button onclick="submitFunction()">Add a review to our list!</button>
+                    <button id="reviewsButton" onclick="submitFunction()">Add a review to our list!</button>
 
                     <p id="LEGOStarWarsReviews"></p>
 
@@ -210,15 +184,18 @@
 
     <dl class="servicesFormsGridItem">
         <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="events.html">Our Events!</a></b></dt>
-        <dd class="servicesFormsText">Our club hosts regular events including ...</dd>
+        <dd class="servicesFormsText">Our club hosts regular events related to:</dd>
+        <dd class="clubDetailsTextMain">LEGO Star Wars building, minifigure trading, cosplay, and more!</dd>
     </dl>
     <dl class="servicesFormsGridItem">
         <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="mocs.html">Featured MOCS!</a></b></dt>
-        <dd class="servicesFormsText">Featuring some of the top voted LEGO Star Wars MOCS</dd>
+        <dd class="servicesFormsText">Featuring some of the top voted LEGO Star Wars MOCS:</dd>
+        <dd class="clubDetailsTextMain">Vote for your favourite MOC above!</dd>
     </dl>
     <dl class="servicesFormsGridItem">
         <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="reviews.html">Great reviews!</a></b></dt>
         <dd class="servicesFormsText">Some exiting LEGO Star Wars kits to build</dd>
+        <dd class="clubDetailsTextMain">Suggest other LEGO Star Wars kits to review above!</dd>
     </dl>
 </section>
 

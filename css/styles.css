@@ -83,6 +83,14 @@
     margin-right: 45%;
 }
 
+.responsiveText {
+    font-family: 'Righteous', sans-serif;
+    font-size: calc(8px + 1vw);
+    color: #2E67F8;
+    text-align: left;
+    padding-bottom: 10px;
+}
+
 
 /* 2. Header logo for all pages ----------------------------------------------------- */
 
@@ -139,7 +147,6 @@ header>#mainLogo {
 
 .navGrid>div>a:hover {
     background-color: rgb(255, 255, 255);
-    text-decoration: underline overline rgba(255, 255, 255);
 }
 
 
@@ -191,11 +198,9 @@ header>#mainLogo {
     overflow: hidden;
     letter-spacing: 5px;
     animation: typing 8s steps(38, end);
-    /*, blink .75s step-end infinite; */
     white-space: nowrap;
     font-size: calc(8px + 1.4vw);
     font-weight: 700;
-    /* box-sizing: border-box; */
 }
 
 @keyframes typing {
@@ -209,7 +214,7 @@ header>#mainLogo {
 
 .mainPageGrid {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     padding: 0px;
     border: 5px solid #2E67F8;
     border-radius: 2px;
@@ -221,11 +226,20 @@ header>#mainLogo {
     grid-gap: 1rem;
 }
 
-.introductionSecondaryTitle {
+a.introductionSecondaryTitle {
     font-family: 'Righteous', sans-serif;
     font-size: calc(8px + 1.2vw);
     color: #2E67F8;
     text-align: left;
+    text-decoration: none;
+}
+
+a.introductionSecondaryTitle>dt {
+    background-color: #2E67F844;
+}
+
+a.introductionSecondaryTitle>dt:hover {
+    background-color: rgb(255, 255, 255);
 }
 
 .introductionSecondaryText {
@@ -233,6 +247,7 @@ header>#mainLogo {
     font-size: calc(8px + 1vw);
     color: #2E67F8;
     text-align: left;
+    padding-bottom: 10px;
 }
 
 .featuredMOC {
@@ -343,6 +358,14 @@ img.tp:hover {
     box-sizing: border-box;
 }
 
+.eventsTitleText {
+    font-family: 'Righteous', sans-serif;
+    font-size: calc(8px + 1vw);
+    color: #2E67F8;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
 .eventsPageGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
@@ -359,15 +382,32 @@ img.tp:hover {
     margin-left: 1rem;
 }
 
+.eventsLink {
+    color: #2E67F8;
+    background-color: #2E67F822;
+    text-align: left;
+    text-decoration: none;
+}
+
 .eventsTitle {
     font-family: 'Righteous', sans-serif;
-    font-size: calc(8px + 0.8vw);
+    font-size: calc(8px + 1vw);
     color: #2E67F8;
     text-align: left;
 }
 
 .eventsText {
     font-family: 'Righteous', sans-serif;
+    font-size: calc(8px + 0.8vw);
+    color: #2E67F8;
+    text-align: left;
+    list-style-type: none;
+}
+
+.eventsTextSecondary {
+    font-family: 'Righteous', sans-serif;
+    padding-top: 10px;
+    padding-left: 10px;
     font-size: calc(8px + 0.6vw);
     color: #2E67F8;
     text-align: left;
@@ -376,6 +416,25 @@ img.tp:hover {
 
 
 /* 6. Page 3: MOCs ------------------------------------------------------------------ */
+
+.mocsH1 {
+    font-size: calc(8px + 2vw);
+    font-family: Audiowide, sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2E67F8;
+    text-align: center;
+    font-weight: 500;
+}
+
+.mocsTitleText {
+    font-family: 'Righteous', sans-serif;
+    font-size: calc(8px + 1vw);
+    color: #2E67F8;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
 
 .mocResponsive {
     display: block;
@@ -411,6 +470,7 @@ main.gallery {
 
 .gallery>.gallery__list>li>figure {
     height: 100%;
+    margin-left: 0.5rem;
 }
 
 .gallery>.gallery__list>li>h3 {
@@ -527,6 +587,25 @@ main.gallery {
 
 /* 7. Page 4: Reviews --------------------------------------------------------------- */
 
+.reviewsH1 {
+    font-size: calc(8px + 2vw);
+    font-family: Audiowide, sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2E67F8;
+    text-align: center;
+    font-weight: 500;
+}
+
+.reviewsTitleText {
+    font-family: 'Righteous', sans-serif;
+    font-size: calc(8px + 1vw);
+    color: #2E67F8;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
 .reviewsPageGridTop {
     /* ----- reviews page grid section ---------------------------------------------- */
     display: grid;
@@ -611,7 +690,7 @@ main.gallery {
 
 .reviewsText {
     font-family: 'Righteous', sans-serif;
-    font-size: calc(8px + 0.4vw);
+    font-size: calc(8px + 0.6vw);
     color: #2E67F8;
     text-align: left;
     margin-left: 0.5rem;
@@ -671,6 +750,16 @@ main.gallery {
     padding: 1em;
 }
 
+.servicesH1 {
+    font-size: calc(8px + 2vw);
+    font-family: Audiowide, sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2E67F8;
+    text-align: center;
+    font-weight: 500;
+}
+
 input {
     border: 2px solid black;
 }
@@ -686,43 +775,105 @@ input[type='radio'] {
 
 input[type='email'] {
     height: 30px;
-    width: 60%;
+    width: 40%;
     float: right;
 }
 
 input[type='text'] {
     height: 30px;
-    width: 60%;
+    width: 40%;
     float: right;
 }
 
 input[type='password'] {
     height: 30px;
-    width: 60%;
+    width: 40%;
     float: right;
 }
 
 input[type='submit'] {
     margin-top: 1em;
+    height: 40px;
+    width: 80%;
+}
+
+input[type='button'] {
+    margin-top: 1em;
     height: 30px;
-    width: 60%;
+    width: 40%;
 }
 
 .servicesFormText {
-    font-size: calc(8px + 0.8vw);
-    margin-top: 1em;
+    font-size: calc(8px + 0.6vw);
+    margin-top: 2em;
+    height: 30px;
+    width: 80px;
+    word-wrap: break-word;
+    white-space: normal;
 }
 
-.button {
-    background-color: #4CAF50;
-    /* Green */
+#eventsButton {
     border: none;
-    color: white;
+    color: #2E67F8;
+    background-color: #2E67F822;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Righteous', cursive;
+    font-size: calc(8px + 0.6vw);
+}
+
+#eventsButton:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#membershipButton {
+    border: none;
+    color: #2E67F8;
+    background-color: #2E67F822;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Righteous', cursive;
+    font-size: calc(8px + 0.6vw);
+}
+
+#membershipButton:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#submitMOC {
+    border: none;
+    color: #2E67F8;
+    background-color: #2E67F822;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Righteous', cursive;
+    font-size: calc(8px + 0.6vw);
+}
+
+#submitMOC:hover {
+    background-color: rgb(255, 255, 255);
+}
+
+#reviewsButton {
+    border: none;
+    color: #2E67F8;
+    background-color: #2E67F822;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-family: 'Righteous', cursive;
+    font-size: calc(8px + 0.6vw);
+}
+
+#reviewsButton:hover {
+    background-color: rgb(255, 255, 255);
 }
 
 #nick {
@@ -744,10 +895,7 @@ input[type='submit'] {
 .servicesPageGrid {
     /* ----- services forms entry grid section -------------------------------------- */
     display: grid;
-    /* grid-template-columns: auto auto auto auto; */
-    /* grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr)); */
-    grid-template-columns: repeat(auto-fill, minmax(4rem, 36rem));
-    /* grid-template-rows: auto auto; */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 0.5rem;
     padding: 0px;
     border: 5px solid #2E67F8;
@@ -815,6 +963,10 @@ input[type='submit'] {
     text-decoration: none;
 }
 
+.servicesFormsTitle:hover {
+    background-color: rgb(255, 255, 255);
+}
+
 .servicesFormsText {
     font-family: 'Righteous', sans-serif;
     font-size: calc(8px + 1vw);
@@ -869,6 +1021,7 @@ input[type='submit'] {
     text-align: left;
     padding-bottom: 5px;
     margin-left: 0.5rem;
+    padding-left: 10px;
 }
 
 
