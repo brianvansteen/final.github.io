@@ -42,23 +42,40 @@ function StarWarsNameFunction() {
     }
 }
 
-var eventbtn = document.getElementById("eventsButton");
+function membershipValidate() {
+    var fields = ["First Email", "Second Email", "First Name", "Surname", "Password1", "Password2"]
 
-function eventsubmit() {
-    alert("Your suggestion has been submitted!")
-        //eventbtn.textContent = "Your suggestion has been submitted!"
-    document.getElementById("eventsForm").reset();
-}
-eventbtn.addEventListener("click", eventsubmit, false);
-
-var membtn = document.getElementById("membershipButton");
-
-function memsubmit() {
-    alert("Your details have been submitted!")
-        //membtn.textContent = "Your details have been submitted!"
+    var i, l = fields.length;
+    var fieldname;
+    for (i = 0; i < l; i++) {
+        fieldname = fields[i];
+        if (document.forms["membershipForm"][fieldname].value === "") {
+            alert(fieldname + " can not be empty");
+            return false;
+        }
+    }
     document.getElementById("membershipForm").reset();
+    return alert("Your details have been submitted!");
+
 }
-membtn.addEventListener("click", memsubmit, false);
+
+function eventsValidate() {
+    var fields = ["First Name", "Email", "Event Name", "Event Type", "Event Timing", "Event Location"]
+
+    var i, l = fields.length;
+    var fieldname;
+    for (i = 0; i < l; i++) {
+        fieldname = fields[i];
+        if (document.forms["eventsForm"][fieldname].value === "") {
+            alert(fieldname + " can not be empty");
+            return false;
+        }
+    }
+    document.getElementById("eventsForm").reset();
+    return alert("Your suggestion has been submitted!");
+
+}
+
 
 // Vote for favourite MOC -------------------------------------------------------------------------
 
@@ -100,7 +117,7 @@ function results() {
 
     var comments = document.getElementById('pollComments').value;
 
-    alert("Thank you " + name + " " + email + "! Your vote for MOC " + poll + " and your comments " + comments + " wwere submitted.");
+    alert("Thank you " + name + " " + email + "! Your vote for MOC " + poll + " and your comments " + comments + " were submitted.");
 
 }
 

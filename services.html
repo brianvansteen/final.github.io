@@ -67,60 +67,60 @@
             <dl class="servicesPageGridItem">
                 <dt class="servicesTitle"><b>Membership form</b></dt><br>
                 <dd class="servicesText">
-                    <form id="membershipForm">
+                    <form id="membershipForm" name="membershipForm">
                         <label class="servicesFormText">Your email:
-                            <input type = "email" id = "email_addr" name = "email1" placeholder = "me@mail.com" required></label><br/>
+                            <input type = "email" id = "email_addr" name = "First Email" placeholder = "me@mail.com" required></label><br/>
                         <br>
                         <label class="servicesFormText">Repeat your email:
-                            <input type = "email" id = "email_repeat" name = "email2" placeholder = "me@mail.com" required onchange = "return emailCheck()"></label><br/>
+                            <input type = "email" id = "email_repeat" name = "Second Email" placeholder = "me@mail.com" required onchange = "return emailCheck()"></label><br/>
                         <br>
                         <input type='button' value="Confirm emails!" onclick="emailCheck();"><br/>
                         <br>
                         <label class="servicesFormText" for="fName">First Name:</label>
-                        <input type="text" name="fName" id="fName" placeholder="First name" required><br/><br/>
+                        <input type="text" name="First Name" id="fName" placeholder="First name" required><br/><br/>
                         <br>
                         <label class="servicesFormText" for="lName">Surname:</label>
-                        <input type="text" name="lName" id="lName" placeholder="Surname" required><br/><br/>
+                        <input type="text" name="Surname" id="lName" placeholder="Surname" required><br/><br/>
                         <label class="servicesFormText" for="yesStarWarsName">Add Star Wars name?</label>
                         <input id="yesStarWarsName" name="yesStarWarsName" type="checkbox" value="yes" onchange="StarWarsNameFunction()" /><br/>
                         <div id="nick">
                             <br>
                             <label for="nickname">Star Wars name:</label>
-                            <input type="text" name="nickname" id="nickname"><br/>
+                            <input type="text" name="Star Wars Name" id="nickname"><br/>
                         </div>
                         <br>
                         <label class="servicesFormText">Create password:
-                            <input type = "password" id = "password_first" name = "password1" required></label><br/>
+                            <input type = "password" id = "password_first" name = "Password1" required></label><br/>
                         <br>
                         <label class="servicesFormText">Repeat password:
-                            <input type = "password" id = "password_repeat" name = "password2" required onchange = "return passCheck()"></label><br/>
+                            <input type = "password" id = "password_repeat" name = "Password2" required onchange = "return passCheck()"></label><br/>
                         <br>
                         <input type='button' value="Confirm password!" onclick="return passCheck();">
                     </form>
                     <br>
-                    <button id="membershipButton">Submit membership request!</button>
+                    <button id="membershipButton" onclick="return membershipValidate();">Submit membership request!</button>
                 </dd>
             </dl>
 
             <dl class="servicesPageGridItem">
                 <dt class="servicesTitle"><b>Suggest a club event!</b></dt><br>
                 <dd class="servicesText">
-                    <form id="eventsForm">
+                    <form id="eventsForm" name="eventsForm">
                         <label class="servicesFormText">First Name:
-                            <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                            <input type="text" name="First Name" id="fName" required><br/></label><br/><br>
                         <label class="servicesFormText">Enter email:
-                            <input type = "email" id = "email_addr" name = "email1" placeholder = "me@mail.com" required></label><br/><br>
+                            <input type = "email" id = "email_addr" name = "Email" placeholder = "me@mail.com" required></label><br/><br>
                         <label class="servicesFormText">Event Name:
-                                <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                                <input type="text" name="name" id="Event Name" required><br/></label><br/><br>
                         <label class="servicesFormText">Event Type:
-                                    <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                                    <input type="text" name="type" id="Event Type" required><br/></label><br/><br>
                         <label class="servicesFormText">Event Timing:
-                                        <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                                        <input type="text" name="timing" id="Event Timing" required><br/></label><br/><br>
                         <label class="servicesFormText">Event Location:
-                                            <input type="text" name="fName" id="fName" required><br/></label><br/><br>
+                                            <input type="text" name="Event Location" id="location" required><br/></label><br/><br>
                         <textarea id="pollComments" name="comments" rows="6" cols="40" placeholder="Event description"></textarea>
                     </form>
-                    <button id="eventsButton">Submit events suggestion!</button>
+                    <button id="eventsButton" onclick="return eventsValidate();">Submit events suggestion!</button>
                 </dd>
             </dl>
 
