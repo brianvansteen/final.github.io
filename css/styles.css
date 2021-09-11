@@ -41,8 +41,6 @@
     src: url("../fonts/Audiowide-Regular.ttf");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
 .responsiveText {
     text-align: left;
     font-size: calc(8px + 0.8vw);
@@ -196,19 +194,16 @@ dl.mainPageGridItem {
     font-size: calc(8px + 1.4vw);
 }
 
-a.introductionSecondaryTitle {
+.introductionSecondaryTitle>a {
     font-family: 'Righteous', sans-serif;
     font-size: calc(8px + 1.2vw);
     color: #2E67F8;
     text-align: left;
     text-decoration: none;
-}
-
-a.introductionSecondaryTitle>dt {
     background-color: #2E67F844;
 }
 
-a.introductionSecondaryTitle>dt:hover {
+.introductionSecondaryTitle>a:hover {
     background-color: rgb(255, 255, 255);
 }
 
@@ -274,14 +269,6 @@ img.tp:hover {
     max-height: 60%;
 }
 
-
-/* 
-.eventsContainer {
-    position: relative;
-    width: 50%;
-    max-width: 300px;
-} */
-
 .eventsImageTitle {
     font-family: 'Righteous', sans-serif;
     font-size: calc(8px + 0.6vw);
@@ -297,23 +284,6 @@ img.tp:hover {
     margin-bottom: 10px;
     opacity: 0.2;
 }
-
-
-/* 
-.overlay {
-    position: absolute;
-    bottom: 0;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
-    color: #f1f1f1;
-    width: 100%;
-    transition: .5s ease;
-    opacity: 0;
-    color: white;
-    font-size: 20px;
-    padding: 20px;
-    text-align: center;
-} */
 
 .thumbnail:hover {
     opacity: 1.0;
@@ -365,6 +335,7 @@ img.tp:hover {
     font-size: calc(8px + 1vw);
     color: #2E67F8;
     text-align: left;
+    list-style-type: none;
 }
 
 .eventsText {
@@ -835,7 +806,7 @@ input[type='button'] {
     border: none;
     color: #2E67F8;
     background-color: #2E67F822;
-    padding: 15px 32px;
+    padding: 20px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -887,6 +858,7 @@ input[type='button'] {
     font-size: calc(8px + 1.2vw);
     color: #2E67F8;
     text-align: left;
+    padding-bottom: 10px;
 }
 
 .servicesText {
@@ -895,6 +867,7 @@ input[type='button'] {
     color: #2E67F8;
     text-align: left;
     margin-left: 0.5rem;
+    padding-bottom: 10px;
 }
 
 #LEGOStarWarsReviews {
@@ -1085,7 +1058,7 @@ input[type='button'] {
 /* 11. Report */
 
 .reportText {
-    font-family: 'Roboto', sans-serif;
+    font-family: sans-serif;
     font-size: calc(8px + 0.6vw);
     color: #2a504b;
 }

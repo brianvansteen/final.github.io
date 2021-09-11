@@ -49,14 +49,14 @@
 
     <br>
 
-    <section class="servicesBackground">
+    <div class="servicesBackground">
 
         <br>
 
-        <section class="servicesPageGrid">
+        <div class="servicesPageGrid">
 
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle"><b>Membership form</b></dt><br>
+                <dt class="servicesTitle"><b>Membership form</b></dt>
                 <dd class="servicesText">
                     <form id="membershipForm" name="membershipForm">
                         <label class="servicesFormText">Your email:
@@ -67,11 +67,11 @@
                         <br>
                         <input type='button' value="Confirm emails!" onclick="emailCheck();"><br/>
                         <br>
-                        <label class="servicesFormText" for="fName">First Name:</label>
-                        <input type="text" name="First Name" id="fName" placeholder="First name" required><br/><br/>
+                        <label class="servicesFormText">First Name:
+                        <input type="text" name="First Name" placeholder="First name" required></label><br/><br/>
                         <br>
-                        <label class="servicesFormText" for="lName">Surname:</label>
-                        <input type="text" name="Surname" id="lName" placeholder="Surname" required><br/><br/>
+                        <label class="servicesFormText">Surname:
+                        <input type="text" name="Surname" id="lName" placeholder="Surname" required></label><br/><br/>
                         <label class="servicesFormText" for="yesStarWarsName">Add Star Wars name?</label>
                         <input id="yesStarWarsName" name="yesStarWarsName" type="checkbox" value="yes" onchange="StarWarsNameFunction()" /><br/>
                         <div id="nick">
@@ -94,22 +94,22 @@
             </dl>
 
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle"><b>Suggest a club event!</b></dt><br>
+                <dt class="servicesTitle"><b>Suggest a club event!</b></dt>
                 <dd class="servicesText">
                     <form id="eventsForm" name="eventsForm">
                         <label class="servicesFormText">First Name:
-                            <input type="text" name="First Name" id="fName" required><br/></label><br/><br>
+                            <input type="text" name="FirstName" required><br/></label><br/><br>
                         <label class="servicesFormText">Enter email:
-                            <input type = "email" id = "email_addr" name = "Email" placeholder = "me@mail.com" required></label><br/><br>
+                            <input type = "email" name = "Email" placeholder = "me@mail.com" required></label><br/><br>
                         <label class="servicesFormText">Event Name:
-                                <input type="text" name="name" id="Event Name" required><br/></label><br/><br>
+                            <input type="text" name="name" id="EventName" required><br/></label><br/><br>
                         <label class="servicesFormText">Event Type:
-                                    <input type="text" name="type" id="Event Type" required><br/></label><br/><br>
+                            <input type="text" name="type" id="EventType" required><br/></label><br/><br>
                         <label class="servicesFormText">Event Timing:
-                                        <input type="text" name="timing" id="Event Timing" required><br/></label><br/><br>
+                            <input type="text" name="timing" id="EventTiming" required><br/></label><br/><br>
                         <label class="servicesFormText">Event Location:
-                                            <input type="text" name="Event Location" id="location" required><br/></label><br/><br>
-                        <textarea id="pollComments" name="comments" rows="6" cols="40" placeholder="Event description"></textarea>
+                            <input type="text" name="Event Location" id="EventLocation" required><br/></label><br/><br>
+                        <textarea name="comments" rows="6" cols="40" placeholder="Event description"></textarea>
                     </form>
                     <button id="eventsButton" onclick="return eventsValidate();">Submit events suggestion!</button>
                 </dd>
@@ -117,7 +117,7 @@
 
 
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle" id="voteMOC"><b>Rate the MOCS!</b></dt><br>
+                <dt class="servicesTitle" id="voteMOC"><b>Rate the MOCS!</b></dt>
                 <dd class="servicesText">
                     <form onsubmit="results();">
                         <label class="servicesFormText">First Name:</label>
@@ -144,7 +144,7 @@
                         <input id="MOC14" type="radio" name="MOCratings" value="14" /> 14: Gladiator-class Star Destroyer <br><br>
                         <input id="MOC15" type="radio" name="MOCratings" value="15" /> 15: Survival on Dantooine <br><br>
                         <p>Leave any comments!</p>
-                        <textarea id="pollComments" name="comments" rows="6" cols="40" placeholder="Your message"></textarea>
+                        <textarea name="comments" rows="6" cols="40" placeholder="Your message"></textarea>
                         <br>
                         <input id="submitMOC" type="submit" value="Send your vote now!" />
                     </form>
@@ -154,105 +154,95 @@
 
 
             <dl class="servicesPageGridItem">
-                <dt class="servicesTitle" id=suggestReview><b>Suggest a review!</b></dt><br>
+                <dt class="servicesTitle" id=suggestReview><b>Suggest a review!</b></dt>
                 <dd class="servicesText">What is your favourite LEGO Star Wars kit that has been reviewed?</dd>
 
-                <div>
+                <dd>
 
                     <button id="reviewsButton" onclick="submitFunction()">Add a review to our list!</button>
 
                     <p id="LEGOStarWarsReviews"></p>
 
-                </div>
-
-</html>
-</dl>
-</section>
-
-<br>
-
-<section class="servicesFormsGrid">
-
-    <dl class="servicesFormsGridItem">
-        <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="events.html">Our Events!</a></b></dt>
-        <dd class="servicesFormsText">Our club hosts regular events related to:</dd>
-        <dd class="clubDetailsTextMain">LEGO Star Wars building, minifigure trading, cosplay, and more!</dd>
-    </dl>
-    <dl class="servicesFormsGridItem">
-        <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="mocs.html">Featured MOCS!</a></b></dt>
-        <dd class="servicesFormsText">Featuring some of the top voted LEGO Star Wars MOCS:</dd>
-        <dd class="clubDetailsTextMain">Vote for your favourite MOC above!</dd>
-    </dl>
-    <dl class="servicesFormsGridItem">
-        <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="reviews.html">Great reviews!</a></b></dt>
-        <dd class="servicesFormsText">Some exiting LEGO Star Wars kits to build</dd>
-        <dd class="clubDetailsTextMain">Suggest other LEGO Star Wars kits to review above!</dd>
-    </dl>
-</section>
-
-<br>
-
-<section class="clubDetailsGrid">
-
-    <dl class="clubDetailsGridItem">
-        <dt class="clubDetailsTitle" id="clubContacts"><b>LEGO Star Wars club contacts</b></dt>
-        <dd class="clubDetailsTextMain">Your club's organizers:</dd>
-        <dd class="clubDetailsTextSecondary">President: Brian "Skywalker" Van Steen - <a href="brian@email.com">brian@email.com</a></dd>
-        <dd class="clubDetailsTextSecondary">Treasurer: John "Chewy" Jacks - <a href="brian@email.com">john@email.com</a></dd>
-        <dd class="clubDetailsTextSecondary">Events: Sarah "Leia" Smith - <a href="brian@email.com">sarah@email.com</a></dd>
-        <dd class="clubDetailsTextSecondary">Web Team: Jennifer "Padme" Amidala - <a href="brian@email.com">jennifer@email.com</a></dd>
-    </dl>
-    <dl class="clubDetailsGridItem">
-        <dt class="clubDetailsTitle" id="clubPrivacy"><b>LEGO Star Wars club privacy</b></dt>
-        <dd class="clubDetailsTextMain">The LEGO Stars club follows strict privacy policies</dd>
-        <dd class="clubDetailsTextSecondary">All club member details are kept strictly confidential, and will not be sold or shared with any outside party.</dd>
-    </dl>
-    <dl class="clubDetailsGridItem">
-        <dt class="clubDetailsTitle" id="clubMedia"><b>LEGO Star Wars club media</b></dt>
-        <dd class="clubDetailsTextMain">Additional details regarding the club's activities are shared as follows:</dd>
-        <a href="https://www.youtube.com/">
-            <dd class="clubDetailsTextSecondary">YouTube</dd>
-        </a>
-        <a href="https://www.facebook.com/">
-            <dd class="clubDetailsTextSecondary">Facebook</dd>
-        </a>
-        <a href="https://www.instagram.com/">
-            <dd class="clubDetailsTextSecondary">Instagram</dd>
-        </a>
-        <a href="https://www.twitter.com/">
-            <dd class="clubDetailsTextSecondary">Twitter</dd>
-        </a>
-    </dl>
-    <dl class="clubDetailsGridItem">
-        <dt class="clubDetailsTitle" id="clubBackground"><b>LEGO Star Wars club background</b></dt>
-        <dd class="clubDetailsTextMain">The history of your club</dd>
-        <dd class="clubDetailsTextSecondary">The LEGO Star Wars club was founded in 2006, by Michael "R2D2" MacCrimmon.</dd>
-        <dd class="clubDetailsTextSecondary">The first meeting of the club took place on June 17, 2006.</dd>
-        <dd class="clubDetailsTextSecondary">The membership has grown from 5 at that first meeting, to more than 200 Jedis!</dd>
-        <dd class="clubDetailsTextSecondary">We host more than 10 events every year.</dd>
-    </dl>
-
-</section>
-<br>
-
-<br>
-
-</section>
-
-
-<!-- Footer section -->
-
-<footer>
-
-    <br>
-
-    <nav class="footerLink">
-        <div class="footerLink">
-            <a class="footerLink" href="index.html">Home</a>
+                </dd>
+            </dl>
         </div>
-    </nav>
 
-</footer>
+        <br>
+
+        <div class="servicesFormsGrid">
+
+            <dl class="servicesFormsGridItem">
+                <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="events.html">Our Events!</a></b></dt>
+                <dd class="servicesFormsText">Our club hosts regular events related to:</dd>
+                <dd class="clubDetailsTextMain">LEGO Star Wars building, minifigure trading, cosplay, and more!</dd>
+            </dl>
+            <dl class="servicesFormsGridItem">
+                <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="mocs.html">Featured MOCS!</a></b></dt>
+                <dd class="servicesFormsText">Featuring some of the top voted LEGO Star Wars MOCS:</dd>
+                <dd class="clubDetailsTextMain">Vote for your favourite MOC above!</dd>
+            </dl>
+            <dl class="servicesFormsGridItem">
+                <dt class="servicesFormsTitle"><b><a class="servicesFormsTitle" href="reviews.html">Great reviews!</a></b></dt>
+                <dd class="servicesFormsText">Some exiting LEGO Star Wars kits to build</dd>
+                <dd class="clubDetailsTextMain">Suggest other LEGO Star Wars kits to review above!</dd>
+            </dl>
+        </div>
+
+        <br>
+
+        <div class="clubDetailsGrid">
+
+            <dl class="clubDetailsGridItem">
+                <dt class="clubDetailsTitle" id="clubContacts"><b>LEGO Star Wars club contacts</b></dt>
+                <dd class="clubDetailsTextMain">Your club's organizers:</dd>
+                <dd class="clubDetailsTextSecondary">President: Brian "Skywalker" Van Steen - <a href="brian@email.com">brian@email.com</a></dd>
+                <dd class="clubDetailsTextSecondary">Treasurer: John "Chewy" Jacks - <a href="brian@email.com">john@email.com</a></dd>
+                <dd class="clubDetailsTextSecondary">Events: Sarah "Leia" Smith - <a href="brian@email.com">sarah@email.com</a></dd>
+                <dd class="clubDetailsTextSecondary">Web Team: Jennifer "Padme" Amidala - <a href="brian@email.com">jennifer@email.com</a></dd>
+            </dl>
+            <dl class="clubDetailsGridItem">
+                <dt class="clubDetailsTitle" id="clubPrivacy"><b>LEGO Star Wars club privacy</b></dt>
+                <dd class="clubDetailsTextMain">The LEGO Stars club follows strict privacy policies</dd>
+                <dd class="clubDetailsTextSecondary">All club member details are kept strictly confidential, and will not be sold or shared with any outside party.</dd>
+            </dl>
+            <dl class="clubDetailsGridItem">
+                <dt class="clubDetailsTitle" id="clubMedia"><b>LEGO Star Wars club media</b></dt>
+                <dd class="clubDetailsTextMain">Additional details regarding the club's activities are shared as follows:</dd>
+                <dd class="clubDetailsTextSecondary"><a href="https://www.youtube.com/">YouTube</a></dd>
+                <dd class="clubDetailsTextSecondary"><a href="https://www.facebook.com/">Facebook</a></dd>
+                <dd class="clubDetailsTextSecondary"><a href="https://www.instagram.com/">Instagram</a></dd>
+                <dd class="clubDetailsTextSecondary"><a href="https://www.twitter.com/">Twitter</a></dd>
+            </dl>
+            <dl class="clubDetailsGridItem">
+                <dt class="clubDetailsTitle" id="clubBackground"><b>LEGO Star Wars club background</b></dt>
+                <dd class="clubDetailsTextMain">The history of your club</dd>
+                <dd class="clubDetailsTextSecondary">The LEGO Star Wars club was founded in 2006, by Michael "R2D2" MacCrimmon.</dd>
+                <dd class="clubDetailsTextSecondary">The first meeting of the club took place on June 17, 2006.</dd>
+                <dd class="clubDetailsTextSecondary">The membership has grown from 5 at that first meeting, to more than 200 Jedis!</dd>
+                <dd class="clubDetailsTextSecondary">We host more than 10 events every year.</dd>
+            </dl>
+
+        </div>
+        <br>
+
+        <br>
+
+    </div>
+
+
+    <!-- Footer section -->
+
+    <footer>
+
+        <br>
+
+        <nav class="footerLink">
+            <div class="footerLink">
+                <a class="footerLink" href="index.html">Home</a>
+            </div>
+        </nav>
+
+    </footer>
 
 </body>
 

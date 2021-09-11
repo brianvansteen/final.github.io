@@ -54,7 +54,7 @@ function membershipValidate() {
 // Validate all event form fields are entered, submit form and show alert, reset form -------------
 
 function eventsValidate() {
-    var fields = ["First Name", "Email", "Event Name", "Event Type", "Event Timing", "Event Location"]
+    var fields = ["FirstName", "Email", "EventName", "EventType", "EventTiming", "EventLocation"]
     var i;
     var l = fields.length;
     var fieldname;
