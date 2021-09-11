@@ -1,15 +1,3 @@
-// // Change text size code --------------------------------------------------------------------------
-
-// document.getElementById("smallA").onclick = function() { changeSize("smallresponsiveText") };
-// document.getElementById("normalA").onclick = function() { changeSize("responsiveText") };
-// document.getElementById("mediumA").onclick = function() { changeSize("mediumresponiveText") };
-// document.getElementById("largeA").onclick = function() { changeSize("largeresponsiveText") };
-
-
-// function changeSize(size) {
-//     document.getElementsByTagName("section").className = size
-// };
-
 // Confirm matching emails ------------------------------------------------------------------------
 
 function emailCheck() {
@@ -40,13 +28,17 @@ function StarWarsNameFunction() {
         document.getElementById('nickname').removeAttribute('required');
         document.getElementById('nick').style.display = "none";
     }
-}
+};
+
+// Validate all membership form fields are entered, submit form and show alert, reset form --------
 
 function membershipValidate() {
     var fields = ["First Email", "Second Email", "First Name", "Surname", "Password1", "Password2"]
-
-    var i, l = fields.length;
+    var i;
+    var l = fields.length;
     var fieldname;
+
+    // for loop to check if each field name is empty, ""; if not generate alert and reset form ----
     for (i = 0; i < l; i++) {
         fieldname = fields[i];
         if (document.forms["membershipForm"][fieldname].value === "") {
@@ -57,13 +49,17 @@ function membershipValidate() {
     document.getElementById("membershipForm").reset();
     return alert("Your details have been submitted!");
 
-}
+};
+
+// Validate all event form fields are entered, submit form and show alert, reset form -------------
 
 function eventsValidate() {
     var fields = ["First Name", "Email", "Event Name", "Event Type", "Event Timing", "Event Location"]
-
-    var i, l = fields.length;
+    var i;
+    var l = fields.length;
     var fieldname;
+
+    // for loop to check if each field name is empty, ""; if not generate alert and reset form ----
     for (i = 0; i < l; i++) {
         fieldname = fields[i];
         if (document.forms["eventsForm"][fieldname].value === "") {
@@ -74,8 +70,7 @@ function eventsValidate() {
     document.getElementById("eventsForm").reset();
     return alert("Your suggestion has been submitted!");
 
-}
-
+};
 
 // Vote for favourite MOC -------------------------------------------------------------------------
 
@@ -117,24 +112,24 @@ function results() {
 
     var comments = document.getElementById('pollComments').value;
 
+    // capture input data from above ID elements and generate message alert -----------------------
     alert("Thank you " + name + " " + email + "! Your vote for MOC " + poll + " and your comments " + comments + " were submitted.");
 
 }
 
-// List of LEGO Star Wars reviews -----------------------------------------------------------------
+// List of LEGO Star Wars reviews that can be added to --------------------------------------------
 
 var reviewsLEGO = ["75290 Mos Eisley Cantina", "75252 Imperial Star Destroyer"];
 
-function loadReviews() {
+function loadReviews() { // load initial two reviews from array above, printed as unordered list --
     reviewsLEGOList = "";
     for (var i = 0; i < reviewsLEGO.length; i++) {
         reviewsLEGOList += "<li>" + reviewsLEGO[i] + "</li>";
     }
     document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGOList;
-    // document.getElementById("LEGOStarWarsReviews").innerHTML = reviewsLEGO;
 }
 
-function submitFunction() {
+function submitFunction() { // add any additional reviews, added to existing unorder list ---------
     var newReview = prompt("What LEGO Star Wars kit should be reviewed?");
     reviewsLEGO.push(newReview);
     reviewsLEGOList = "";

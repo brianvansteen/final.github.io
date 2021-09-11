@@ -1,4 +1,4 @@
-/* Yokoso Anime */
+/* Ottawa Star Wars Club */
 
 
 /*-----------------------------------------------------------------------------------
@@ -16,7 +16,6 @@
 	9. Footer for all pages
     10. Other responsive features
     11. Report page
-
 ------------------------------------------------------------------------------------- */
 
 
@@ -44,45 +43,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap');
-
-/* Text sizing options -------------------------------------------------------------- */
-
-.textSizing {
-    text-align: center;
-}
-
-.small {
-    font-size: 0.75em;
-}
-
-.normal {
-    font-size: 1em;
-}
-
-.medium {
-    font-size: 1.5em;
-}
-
-.large {
-    font-size: 2em;
-}
-
-#smallA,
-#normalA,
-#mediumA,
-#largeA {
-    cursor: pointer;
-}
-
-.servicesTextSizing {
-    text-align: center;
-    border: 2px solid #2E67F8;
-    background-color: rgb(255, 255, 255);
-    border-radius: 2px;
-    margin-left: 45%;
-    margin-right: 45%;
-}
-
 .responsiveText {
     text-align: left;
     font-size: calc(8px + 0.8vw);
@@ -92,48 +52,6 @@
 }
 
 .responsiveText>p {
-    font-family: 'Righteous', sans-serif;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.smallresponsiveText {
-    text-align: left;
-    font-size: calc(8px + 0.4vw);
-    color: #2E67F8;
-    padding-bottom: 5px;
-    margin-left: 5%;
-}
-
-.smallresponsiveText>p {
-    font-family: 'Righteous', sans-serif;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.mediumresponsiveText {
-    text-align: left;
-    font-size: calc(8px + 1vw);
-    color: #2E67F8;
-    padding-bottom: 5px;
-    margin-left: 5%;
-}
-
-.mediumresponsiveText>p {
-    font-family: 'Righteous', sans-serif;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.largeresponsiveText {
-    text-align: left;
-    font-size: calc(8px + 1.4vw);
-    color: #2E67F8;
-    padding-bottom: 5px;
-    margin-left: 5%;
-}
-
-.largeresponsiveText>p {
     font-family: 'Righteous', sans-serif;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -214,6 +132,7 @@ header>#mainLogo {
 }
 
 .neon {
+    /* cloud effect for text -------------------------------------------------------- */
     text-shadow: 0 0 50px #15f2fd, 0 0 50px #15f2fd, 0 0 50px #15f2fd, 0 0 50px #15f2fd, 0 0 80px #15f2fd, 0 0 90px #15f2fd, 0 0 200px #15f2fd, 0 0 300px #15f2fd;
 }
 
@@ -235,6 +154,7 @@ header>#mainLogo {
 }
 
 .typewriter {
+    /* text typewriter effect ------------------------------------------------------- */
     display: inline-block;
     text-align: center;
 }
@@ -244,10 +164,11 @@ header>#mainLogo {
     display: inline-block;
     color: #2E67F8;
     overflow: hidden;
+    overflow-wrap: normal;
     letter-spacing: 5px;
     animation: typing 8s steps(38, end);
     white-space: nowrap;
-    font-size: calc(8px + 1.4vw);
+    font-size: calc(8px + 1vw);
     font-weight: 700;
 }
 
@@ -261,17 +182,18 @@ header>#mainLogo {
 }
 
 .mainPageGrid {
+    /* responsive grid area for website pages description --------------------------- */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     padding: 0px;
     border: 5px solid #2E67F8;
     border-radius: 2px;
+    grid-gap: 0.5rem;
 }
 
-.mainPageGridItem {
-    padding: 20px;
+dl.mainPageGridItem {
+    padding: 5px;
     font-size: calc(8px + 1.4vw);
-    grid-gap: 1rem;
 }
 
 a.introductionSecondaryTitle {
@@ -316,6 +238,7 @@ a.introductionSecondaryTitle>dt:hover {
 }
 
 img.tp {
+    /* image for featured MOC ------------------------------------------------------- */
     transform-origin: 50% 50%;
     opacity: 0.2;
     width: 8vw;
@@ -529,8 +452,8 @@ main.gallery {
 }
 
 .gallery>.gallery__list>li>figure>img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
     object-fit: contain;
     opacity: 0.2;
     padding-bottom: 1em;
