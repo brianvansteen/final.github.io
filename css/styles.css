@@ -1060,5 +1060,7 @@ input[type='button'] {
 .reportText {
     font-family: sans-serif;
     font-size: calc(8px + 0.6vw);
-    color: #2a504b;
+    color: #2E67F8;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
